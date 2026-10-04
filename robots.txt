@@ -1,0 +1,4 @@
+# Halaman di sini adalah contoh yang dibuat untuk satu usaha tertentu dan
+# dikirim langsung ke pemiliknya. Tidak untuk dicari orang lain di mesin pencari.
+User-agent: *
+Disallow: /

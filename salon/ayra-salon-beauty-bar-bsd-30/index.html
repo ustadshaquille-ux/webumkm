@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayra Salon &amp; Beauty Bar BSD — BSD</title>
+<meta name="description" content="Salon di BSD yang gak buru-buru. Dikerjakan pelan-pelan sampai hasilnya sesuai yang kamu mau.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ayra Salon &amp; Beauty Bar BSD">
+<meta property="og:description" content="Salon di BSD yang gak buru-buru. Dikerjakan pelan-pelan sampai hasilnya sesuai yang kamu mau.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#241a22; --cream:#f7ecef; --paper:#fdf6f7;
+  --wood:#8d5a6b; --gold:#c99a7a; --clay:#a8425f;
+  --muted:#7d6f63; --line:#e3d7c5;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif; --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--wood);font-weight:700}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.6vw,3.3rem)}
+em{font-style:italic;color:var(--clay)}
+
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-family:var(--serif);font-size:1.2rem;letter-spacing:.12em;line-height:1.1}
+.logo span{display:block;font-family:var(--sans);font-size:.56rem;letter-spacing:.32em;color:var(--muted)}
+nav{display:flex;gap:30px;font-size:.92rem;font-weight:500}
+nav a{position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--clay);transition:width .25s}
+nav a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:999px;font-weight:700;font-size:.92rem;transition:transform .2s,background .2s,color .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--ink);color:var(--cream)}
+.btn-dark:hover{background:var(--clay)}
+.btn-line{border:1.5px solid var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--cream)}
+.btn svg{width:18px;height:18px;fill:currentColor}
+
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:64px 0 84px}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);margin:18px 0 22px}
+.hero p{max-width:30rem;font-size:1.08rem;color:#4a3f37}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.shot{position:relative}
+.shot img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:260px 260px 14px 14px}
+.badge{position:absolute;left:-22px;bottom:34px;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px -18px rgba(27,22,19,.45)}
+.badge b{font-family:var(--serif);font-size:2rem;font-weight:600;display:block;line-height:1}
+.badge small{font-size:.74rem;color:var(--muted)}
+.stars{color:var(--gold);letter-spacing:2px;font-size:.85rem}
+
+.strip{background:var(--ink);color:var(--cream);overflow:hidden;white-space:nowrap;padding:15px 0}
+.strip div{display:inline-block;animation:slide 30s linear infinite;font-family:var(--serif);font-style:italic;font-size:1.15rem}
+.strip i{color:var(--gold);font-style:normal;margin:0 24px}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;padding:96px 0}
+.about p{font-size:1.06rem;color:#4a3f37;margin-top:20px;max-width:36rem}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line)}
+.facts div{padding:22px 18px 0 0}
+.facts b{font-family:var(--serif);font-size:1.7rem;font-weight:600;display:block}
+.facts span{font-size:.86rem;color:var(--muted)}
+
+.offer{background:var(--ink);color:var(--cream);padding:96px 0}
+.offer .eyebrow{color:var(--gold)}
+.offer em{color:var(--gold)}
+.offer-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center;margin-top:44px}
+.offer-grid img{border-radius:14px;aspect-ratio:1;object-fit:cover;width:100%}
+.offer-grid.one{grid-template-columns:1fr;max-width:640px}
+.cap{font-size:.8rem;color:#a89a8b;margin-top:12px}
+.list h3{font-size:1.05rem;font-family:var(--sans);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:30px 0 6px}
+.list h3:first-child{margin-top:0}
+.item{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px dashed color-mix(in srgb,var(--cream) 22%,transparent)}
+.item b{font-family:var(--serif);font-size:1.28rem;font-weight:400}
+.item span{flex:1;font-size:.86rem;color:#a89a8b}
+.offer .btn{margin-top:34px;background:var(--gold);color:var(--ink)}
+.offer .btn:hover{background:var(--cream)}
+
+.gal{padding:92px 0 0}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
+.gal-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;transition:transform .4s,filter .4s;filter:saturate(.96)}
+.gal-grid img:hover{transform:scale(1.03);filter:saturate(1.08)}
+.gal-grid img:first-child{grid-row:span 2;aspect-ratio:3/8}
+
+.visit{padding:96px 0;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:stretch}
+.visit dt{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--wood);font-weight:700;margin-top:22px}
+.visit dd{font-size:1.04rem;margin-top:4px}
+.visit dd a{border-bottom:1px solid var(--clay)}
+.map{border-radius:14px;overflow:hidden;min-height:420px;border:1px solid var(--line);background:var(--cream)}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:sepia(.14) saturate(.92)}
+
+.closing{background:var(--clay);color:var(--cream);text-align:center;padding:84px 0}
+.closing h2{max-width:18ch;margin:0 auto 28px}
+.closing em{color:var(--ink)}
+.closing .btn{background:var(--cream);color:var(--ink)}
+footer{background:var(--ink);color:#a89a8b;font-size:.85rem;padding:28px 0}
+footer .credit{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;opacity:.75}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a{color:var(--cream)}
+
+.wa{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#1f7a4d;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(0,0,0,.5);transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  nav{display:none}
+  .hero,.about,.offer-grid,.visit{grid-template-columns:1fr;gap:36px}
+  .hero{padding:36px 0 60px}
+  .shot{order:-1}
+  .shot img{aspect-ratio:1;border-radius:160px 260px 14px 14px}
+  .badge{left:12px;bottom:14px}
+  .about,.offer,.visit{padding:64px 0}
+  .gal{padding:56px 0 0}
+  .gal-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .gal-grid img:first-child{grid-row:auto;aspect-ratio:3/4}
+  .bar .btn{padding:10px 16px;font-size:.84rem}
+}
+@media (prefers-reduced-motion:reduce){.strip div{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#" class="logo">AYRA SALON &amp; BEAUTY BAR BS<span>SALON KECANTIKAN</span></a>
+    <nav>
+      <a href="#tentang">Tentang</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#lokasi">Lokasi</a>
+      <a href="https://www.instagram.com/ayrasalonbeautybsd_id/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <a class="btn btn-dark" href="https://wa.me/6282312575557?text=Halo%20Ayra%20Salon%20%26%20Beauty%20Bar%20BSD%2C%20saya%20mau%20booking%20jadwal" target="_blank" rel="noopener">Booking</a>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div class="rv">
+      <p class="eyebrow">salon kecantikan · BSD</p>
+      <h1>Rapi, wangi, <em>pulang percaya diri.</em></h1>
+      <p>Salon di BSD yang gak buru-buru. Dikerjakan pelan-pelan sampai hasilnya sesuai yang kamu mau.</p>
+      <div class="cta">
+        <a class="btn btn-dark" href="https://wa.me/6282312575557?text=Halo%20Ayra%20Salon%20%26%20Beauty%20Bar%20BSD%2C%20saya%20mau%20booking%20jadwal" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1.1.1-1.8-.1-2.9-1-4.8-3.9-5-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.6.8c-.1.2-.2.3-.1.5.7 1.2 1.7 2.1 3 2.7.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.2 1.3Z"/></svg>
+          Booking via WhatsApp
+        </a>
+        <a class="btn btn-line" href="#layanan">Lihat layanan</a>
+      </div>
+    </div>
+    <div class="shot rv">
+      <img src="img/hero.jpg" alt="Ayra Salon &amp; Beauty Bar BSD di BSD" width="1000" height="1250">
+      <div class="badge"><b>4,9</b><div class="stars">★★★★★</div><small>dari 731 ulasan</small></div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"><div>Potong rambut <i>✦</i> Coloring <i>✦</i> Perawatan <i>✦</i> BSD <i>✦</i> Booking via WhatsApp <i>✦</i> Potong rambut <i>✦</i> Coloring <i>✦</i> Perawatan <i>✦</i> BSD <i>✦</i> Booking via WhatsApp <i>✦</i> </div></div>
+
+  <section class="wrap about" id="tentang">
+    <div class="rv">
+      <p class="eyebrow">Tentang kami</p>
+      <h2>Hasilnya diomongin <em>dulu, baru dikerjain.</em></h2>
+    </div>
+    <div class="rv">
+      <p>Kami tanya dulu maunya seperti apa, baru mulai. Kalau ragu, kami kasih saran yang cocok sama bentuk wajah dan gaya kamu.</p>
+      <div class="facts"><div><b>4,9</b><span>rating dari 731 ulasan</span></div><div><b>Booking</b><span>biar gak antre</span></div><div><b>Konsultasi</b><span>gratis sebelum mulai</span></div></div>
+    </div>
+  </section>
+
+  <section class="offer" id="layanan">
+    <div class="wrap">
+      <p class="eyebrow rv">Layanan</p>
+      <h2 class="rv">Yang bisa <em>kami kerjakan.</em></h2>
+      <div class="offer-grid">
+        <div class="rv"><img src="img/2.jpg" alt="Suasana Ayra Salon &amp; Beauty Bar BSD" width="1000" height="1000" loading="lazy"><p class="cap">Suasana di tempat kami.</p></div>
+        <div class="list rv">
+          <h3>Rambut</h3>
+<div class="item"><b>Potong &amp; styling</b><span>pria &amp; wanita</span></div>
+<div class="item"><b>Coloring</b><span>warna sesuai permintaan</span></div>
+<div class="item"><b>Smoothing &amp; keratin</b><span>rambut lebih rapi</span></div>
+<h3>Perawatan</h3>
+<div class="item"><b>Creambath &amp; hair spa</b><span>rambut sehat</span></div>
+<div class="item"><b>Make up</b><span>acara &amp; wisuda</span></div>
+<div class="item"><b>Nail art</b><span>manicure &amp; pedicure</span></div>
+
+          <a class="btn" href="https://wa.me/6282312575557?text=Halo%20Ayra%20Salon%20%26%20Beauty%20Bar%20BSD%2C%20boleh%20minta%20daftar%20layanan%20dan%20harga%3F" target="_blank" rel="noopener">Minta daftar harga</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="wrap gal"><p class="eyebrow rv">Suasana</p><h2 class="rv">Tempatnya <em>kayak gini.</em></h2><div class="gal-grid rv"><img src="img/g1.jpg" alt="Suasana Ayra Salon &amp; Beauty Bar BSD" loading="lazy"><img src="img/g2.jpg" alt="Suasana Ayra Salon &amp; Beauty Bar BSD" loading="lazy"><img src="img/g3.jpg" alt="Suasana Ayra Salon &amp; Beauty Bar BSD" loading="lazy"><img src="img/g4.jpg" alt="Suasana Ayra Salon &amp; Beauty Bar BSD" loading="lazy"></div></section>
+  <section class="wrap visit" id="lokasi">
+    <div class="rv">
+      <p class="eyebrow">Mampir</p>
+      <h2>Kami di <em>BSD.</em></h2>
+      <dl>
+        <dt>Alamat</dt>
+        <dd>BSD, Ruko pasar modern timur tahap 2 Blok AA 23, Rw. Mekar Jaya, Kec. Serpong, Kota Tangerang Selatan, Banten 15310</dd>
+<dt>Jam buka</dt><dd style='font-size:.95rem;line-height:1.9'>Kamis &middot; 09.00–20.00<br>Jumat &middot; 09.00–20.00<br>Sabtu &middot; 09.00–20.00<br>Minggu &middot; 09.00–20.00<br>Senin &middot; 09.00–20.00<br>Selasa &middot; 09.00–20.00<br>Rabu &middot; 09.00–20.00</dd>
+        <dt>WhatsApp</dt>
+        <dd><a href="https://wa.me/6282312575557" target="_blank" rel="noopener">0823-1257-5557</a></dd>
+        <dt>Instagram</dt><dd><a href="https://www.instagram.com/ayrasalonbeautybsd_id/" target="_blank" rel="noopener">@ayrasalonbeautybsd_id</a></dd>
+      </dl>
+      <div class="cta">
+        <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.3066816,106.6864221" target="_blank" rel="noopener">Petunjuk arah</a>
+      </div>
+    </div>
+    <div class="map rv">
+      <iframe title="Peta lokasi Ayra Salon &amp; Beauty Bar BSD" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=106.6814221,-6.3094816,106.6914221,-6.3038816&amp;layer=mapnik&amp;marker=-6.3066816,106.6864221"></iframe>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap rv">
+      <h2>Jadwal akhir pekan cepat penuh. <em>Booking dulu.</em></h2>
+      <a class="btn" href="https://wa.me/6282312575557?text=Halo%20Ayra%20Salon%20%26%20Beauty%20Bar%20BSD%2C%20saya%20mau%20booking%20jadwal" target="_blank" rel="noopener">Booking via WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ayra Salon &amp; Beauty Bar BSD · BSD</span>
+    <span><a href="https://www.instagram.com/ayrasalonbeautybsd_id/" target="_blank" rel="noopener">Instagram</a> · <a href="https://wa.me/6282312575557" target="_blank" rel="noopener">WhatsApp</a></span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/6282312575557" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.3.7 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
+</a>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
