@@ -1,4 +1,10 @@
-# Halaman di sini adalah contoh yang dibuat untuk satu usaha tertentu dan
-# dikirim langsung ke pemiliknya. Tidak untuk dicari orang lain di mesin pencari.
+# Halaman depan adalah portofolio dan boleh dicari.
+# Folder lain adalah contoh yang dibuat untuk satu usaha tertentu dan dikirim
+# langsung ke pemiliknya, jadi tidak untuk dicari orang lain di mesin pencari.
 User-agent: *
+Allow: /$
+Allow: /assets/
+Allow: /projects/
+Allow: /favicon.svg
+Allow: /shaquille-moody.webp
 Disallow: /
