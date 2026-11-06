@@ -6,5 +6,5 @@ Allow: /$
 Allow: /assets/
 Allow: /projects/
 Allow: /favicon.svg
-Allow: /shaquille-moody.webp
+Allow: /handshake
 Disallow: /
