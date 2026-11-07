@@ -2,247 +2,386 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Smart Kitchen Set — Serpong</title>
-<meta name="description" content="Kerjakan rumah, ruko, dan interior di Serpong. Penawaran dirinci dari awal supaya tidak ada biaya kaget di tengah jalan.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SMART Kitchen &amp; Interior Specialist — Kitchen Set Custom Tangerang &amp; BSD</title>
+<meta name="description" content="Kitchen set, lemari, dan interior custom sejak 2002. Dirancang sesuai ukuran rumah Anda, diproduksi di workshop sendiri di Serpong, dipasang tim berpengalaman.">
 <meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#f4f0ea">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231c1a17'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' text-anchor='middle' fill='%23f4f0ea'%3ES%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Smart Kitchen Set">
-<meta property="og:description" content="Kerjakan rumah, ruko, dan interior di Serpong. Penawaran dirinci dari awal supaya tidak ada biaya kaget di tengah jalan.">
-<meta property="og:image" content="img/hero.jpg">
+<meta property="og:title" content="SMART Kitchen &amp; Interior Specialist">
+<meta property="og:description" content="Kitchen set &amp; interior custom sejak 2002. Rancang dapur Anda dalam 3D dan dapatkan estimasi harga langsung.">
+<meta property="og:image" content="img/hero-scandinavian.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --ink:#1a1a18; --cream:#f0ece5; --paper:#f9f7f3;
-  --wood:#6d6656; --gold:#d9a441; --clay:#a8641f;
-  --muted:#7d6f63; --line:#e3d7c5;
-  --serif:"DM Serif Display",Georgia,"Times New Roman",serif; --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
-.eyebrow{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--wood);font-weight:700}
-h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
-h2{font-size:clamp(2rem,4.6vw,3.3rem)}
-em{font-style:italic;color:var(--clay)}
-
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.logo{font-family:var(--serif);font-size:clamp(.8rem,1.9vw,1.2rem);letter-spacing:.1em;line-height:1.1;max-width:58%;overflow-wrap:anywhere}
-.logo span{display:block;font-family:var(--sans);font-size:.56rem;letter-spacing:.32em;color:var(--muted)}
-nav{display:flex;gap:30px;font-size:.92rem;font-weight:500}
-nav a{position:relative;padding:4px 0}
-nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:0;background:var(--clay);transition:width .25s}
-nav a:hover::after{width:100%}
-.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 22px;border-radius:999px;font-weight:700;font-size:.92rem;transition:transform .2s,background .2s,color .2s;white-space:nowrap}
-.btn:hover{transform:translateY(-2px)}
-.btn-dark{background:var(--ink);color:var(--cream)}
-.btn-dark:hover{background:var(--clay)}
-.btn-line{border:1.5px solid var(--ink)}
-.btn-line:hover{background:var(--ink);color:var(--cream)}
-.btn svg{width:18px;height:18px;fill:currentColor}
-
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:64px 0 84px}
-.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);margin:18px 0 22px}
-.hero p{max-width:30rem;font-size:1.08rem;color:#4a3f37}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.shot{position:relative}
-.shot img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px}
-.badge{position:absolute;left:-22px;bottom:34px;background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px -18px rgba(27,22,19,.45)}
-.badge b{font-family:var(--serif);font-size:2rem;font-weight:600;display:block;line-height:1}
-.badge small{font-size:.74rem;color:var(--muted)}
-.stars{color:var(--gold);letter-spacing:2px;font-size:.85rem}
-
-.strip{background:var(--ink);color:var(--cream);overflow:hidden;white-space:nowrap;padding:15px 0}
-.strip div{display:inline-block;animation:slide 30s linear infinite;font-family:var(--serif);font-style:italic;font-size:1.15rem}
-.strip i{color:var(--gold);font-style:normal;margin:0 24px}
-@keyframes slide{to{transform:translateX(-50%)}}
-
-.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;padding:96px 0}
-.about p{font-size:1.06rem;color:#4a3f37;margin-top:20px;max-width:36rem}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border-top:1px solid var(--line)}
-.facts div{padding:22px 18px 0 0}
-.facts b{font-family:var(--serif);font-size:1.7rem;font-weight:600;display:block}
-.facts span{font-size:.86rem;color:var(--muted)}
-
-.offer{background:var(--ink);color:var(--cream);padding:96px 0}
-.offer .eyebrow{color:var(--gold)}
-.offer em{color:var(--gold)}
-.offer-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center;margin-top:44px}
-.offer-grid img{border-radius:14px;aspect-ratio:1;object-fit:cover;width:100%}
-.offer-grid.one{grid-template-columns:1fr;max-width:640px}
-.cap{font-size:.8rem;color:#a89a8b;margin-top:12px}
-.list h3{font-size:1.05rem;font-family:var(--sans);font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:30px 0 6px}
-.list h3:first-child{margin-top:0}
-.item{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px dashed color-mix(in srgb,var(--cream) 22%,transparent)}
-.item b{font-family:var(--serif);font-size:1.28rem;font-weight:400}
-.item span{flex:1;font-size:.86rem;color:#a89a8b}
-.offer .btn{margin-top:34px;background:var(--gold);color:var(--ink)}
-.offer .btn:hover{background:var(--cream)}
-
-.gal{padding:92px 0 0}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:38px}
-.gal-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px;transition:transform .4s,filter .4s;filter:saturate(.96)}
-.gal-grid img:hover{transform:scale(1.03);filter:saturate(1.08)}
-.gal-grid img:first-child{grid-row:span 2;aspect-ratio:3/8}
-
-.visit{padding:96px 0;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:stretch}
-.visit dt{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--wood);font-weight:700;margin-top:22px}
-.visit dd{font-size:1.04rem;margin-top:4px}
-.visit dd a{border-bottom:1px solid var(--clay)}
-.map{border-radius:14px;overflow:hidden;min-height:420px;border:1px solid var(--line);background:var(--cream)}
-.map iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:sepia(.14) saturate(.92)}
-
-.closing{background:var(--clay);color:var(--cream);text-align:center;padding:84px 0}
-.closing h2{max-width:18ch;margin:0 auto 28px}
-.closing em{color:var(--ink)}
-.closing .btn{background:var(--cream);color:var(--ink)}
-footer{background:var(--ink);color:#a89a8b;font-size:.85rem;padding:28px 0}
-footer .credit{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;opacity:.75}
-footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-footer a{color:var(--cream)}
-
-.wa{position:fixed;right:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#1f7a4d;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(0,0,0,.5);transition:transform .2s}
-.wa:hover{transform:scale(1.08)}
-.wa svg{width:30px;height:30px;fill:#fff}
-
-.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
-.rv.in{opacity:1;transform:none}
-
-@media (max-width:860px){
-  nav{display:none}
-  .hero,.about,.offer-grid,.visit{grid-template-columns:1fr;gap:36px}
-  .hero{padding:36px 0 60px}
-  .shot{order:-1}
-  .shot img{aspect-ratio:1;border-radius:16px}
-  .badge{left:12px;bottom:14px}
-  .about,.offer,.visit{padding:64px 0}
-  .gal{padding:56px 0 0}
-  .gal-grid{grid-template-columns:repeat(2,1fr);gap:10px}
-  .gal-grid img:first-child{grid-row:auto;aspect-ratio:3/4}
-  .bar .btn{padding:10px 16px;font-size:.84rem}
-}
-@media (prefers-reduced-motion:reduce){.strip div{animation:none}.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-scandinavian.webp" imagesrcset="img/hero-scandinavian-s.webp 720w, img/hero-scandinavian.webp 1440w" imagesizes="(max-width: 900px) 100vw, 50vw">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
 </head>
 <body>
 
-<header>
-  <div class="wrap bar">
-    <a href="#" class="logo">SMART KITCHEN SET<span>TOKO MEBEL</span></a>
-    <nav>
-      <a href="#tentang">Tentang</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#lokasi">Lokasi</a>
-      
+<a class="skip" href="#utama">Lewati ke konten</a>
+
+<header class="top" id="top">
+  <div class="wrap top-bar">
+    <a href="#" class="brand" aria-label="SMART Kitchen &amp; Interior Specialist, kembali ke atas">
+      <span class="brand-word">SMART</span>
+      <span class="brand-sub">Kitchen &amp; Interior Specialist</span>
+    </a>
+    <nav class="menu" aria-label="Navigasi utama">
+      <a href="#proyek">Proyek</a>
+      <a href="#rancang">Rancang 3D</a>
+      <a href="#material">Material</a>
+      <a href="#proses">Proses</a>
+      <a href="#kontak">Kontak</a>
     </nav>
-    <a class="btn btn-dark" href="https://wa.me/6282123842211?text=Halo%20Smart%20Kitchen%20Set%2C%20saya%20mau%20minta%20penawaran" target="_blank" rel="noopener">Minta penawaran</a>
+    <a class="btn btn-ink btn-sm hide-m" data-wa="umum" href="#">Konsultasi gratis</a>
+    <button class="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu-m"><span></span><span></span></button>
+  </div>
+  <div class="menu-m" id="menu-m" hidden>
+    <a href="#proyek">Proyek</a>
+    <a href="#rancang">Rancang dapur 3D</a>
+    <a href="#material">Panduan material</a>
+    <a href="#proses">Proses kerja</a>
+    <a href="#tanya">Tanya jawab</a>
+    <a href="#kontak">Kontak &amp; lokasi</a>
   </div>
 </header>
 
-<main>
-  <section class="wrap hero">
-    <div class="rv">
-      <p class="eyebrow">Toko mebel · Serpong</p>
-      <h1>Bangun dan renovasi, <em>tanpa drama biaya.</em></h1>
-      <p>Kerjakan rumah, ruko, dan interior di Serpong. Penawaran dirinci dari awal supaya tidak ada biaya kaget di tengah jalan.</p>
-      <div class="cta">
-        <a class="btn btn-dark" href="https://wa.me/6282123842211?text=Halo%20Smart%20Kitchen%20Set%2C%20saya%20mau%20minta%20penawaran" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1.1.1-1.8-.1-2.9-1-4.8-3.9-5-4.1-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.6.8c-.1.2-.2.3-.1.5.7 1.2 1.7 2.1 3 2.7.2.1.4.1.5-.1l.7-.9c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.2 1.3Z"/></svg>
-          Minta penawaran via WhatsApp
-        </a>
-        <a class="btn btn-line" href="#layanan">Lihat layanan</a>
+<main id="utama">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="kicker rv">Sejak 2002 · BSD · Jakarta · Tangerang · Alam Sutera</p>
+        <h1 class="rv">Dapur yang dibuat untuk rumah Anda, <em>bukan dari katalog.</em></h1>
+        <p class="lead rv">Kitchen set, lemari, dan interior custom. Dirancang mengikuti ukuran dan kebiasaan masak keluarga Anda, diproduksi di workshop kami sendiri, lalu dipasang oleh tim yang sama dari awal sampai serah terima.</p>
+        <div class="hero-cta rv">
+          <a class="btn btn-ink" href="#rancang">Rancang dapur Anda dalam 3D</a>
+          <a class="btn btn-ghost" href="#proyek">Lihat hasil kerja</a>
+        </div>
+        <dl class="hero-facts rv">
+          <div><dt>22+</dt><dd>tahun mengerjakan interior</dd></div>
+          <div><dt>2–3</dt><dd>minggu pengerjaan dapur</dd></div>
+          <div><dt>Bergaransi</dt><dd>untuk setiap pekerjaan</dd></div>
+        </dl>
+      </div>
+      <figure class="hero-media">
+        <img src="img/hero-scandinavian.webp" srcset="img/hero-scandinavian-s.webp 720w, img/hero-scandinavian.webp 1440w" sizes="(max-width: 900px) 100vw, 50vw" alt="Dapur bergaya Scandinavian dengan island kayu terang, kursi bar, dan tiga lampu gantung rotan" width="1440" height="1800" fetchpriority="high">
+        <figcaption>Dapur Scandinavian dengan island, Tangerang</figcaption>
+        <img class="hero-inset" src="img/marmer-putih-s.webp" alt="Detail dapur putih dengan backsplash marmer" width="720" height="377" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <!-- PROYEK -->
+  <section class="sec" id="proyek">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker rv">Hasil kerja</p>
+        <h2 class="rv">Setiap dapur dimulai dari <em>pertanyaan yang sama:</em> bagaimana Anda memakainya?</h2>
+      </div>
+      <div class="filter rv" role="tablist" aria-label="Saring proyek berdasarkan gaya">
+        <button role="tab" aria-selected="true" data-f="semua">Semua</button>
+        <button role="tab" aria-selected="false" data-f="modern">Modern</button>
+        <button role="tab" aria-selected="false" data-f="klasik">Klasik</button>
+        <button role="tab" aria-selected="false" data-f="scandinavian">Scandinavian</button>
+        <button role="tab" aria-selected="false" data-f="interior">Lemari &amp; interior</button>
+      </div>
+      <div class="grid-proyek" id="grid-proyek">
+        <figure class="p p-tall" data-g="scandinavian"><img src="img/scandinavian-2-s.webp" data-big="img/scandinavian-2.webp" alt="Dapur Scandinavian, island putih dengan kaki kayu dan kursi bar" loading="lazy" width="720" height="900"><figcaption><b>Scandinavian dengan island</b><span>Tangerang · Residensial</span></figcaption></figure>
+        <figure class="p p-wide" data-g="modern"><img src="img/marmer-putih-s.webp" data-big="img/marmer-putih.webp" alt="Dapur putih bentuk L dengan backsplash marmer dan lampu bawah kabinet" loading="lazy" width="720" height="377"><figcaption><b>Putih modern, backsplash marmer</b><span>Tangerang Selatan · Residensial</span></figcaption></figure>
+        <figure class="p p-tall" data-g="klasik"><img src="img/klasik-island-s.webp" data-big="img/klasik-island.webp" alt="Dapur klasik putih dengan island hitam dan lampu kristal" loading="lazy" width="720" height="900"><figcaption><b>Klasik, island hitam</b><span>Kebayoran Heights · 2–3 minggu</span></figcaption></figure>
+        <figure class="p" data-g="modern"><img src="img/putih-island-s.webp" data-big="img/putih-island.webp" alt="Dapur putih glossy dengan island dan lampu gantung putih" loading="lazy" width="720" height="900"><figcaption><b>Putih bersih dengan island</b><span>Caribbean Island · Residensial</span></figcaption></figure>
+        <figure class="p" data-g="interior"><img src="img/walk-in-closet-s.webp" data-big="img/walk-in-closet.webp" alt="Walk-in closet dengan pintu kaca gelap dan lampu LED tersembunyi" loading="lazy" width="720" height="900"><figcaption><b>Walk-in closet, lampu tersembunyi</b><span>Interior custom</span></figcaption></figure>
+        <figure class="p p-tall" data-g="modern"><img src="img/cinere-loft-s.webp" data-big="img/cinere-loft.webp" alt="Dapur putih dengan top hitam dan kabinet atas sampai plafon" loading="lazy" width="720" height="900"><figcaption><b>Kabinet sampai plafon</b><span>Cinere Loft · Residensial</span></figcaption></figure>
+        <figure class="p" data-g="interior"><img src="img/backdrop-tv-s.webp" data-big="img/backdrop-tv.webp" alt="Backdrop TV kayu dengan bilah vertikal dan lampu LED" loading="lazy" width="720" height="900"><figcaption><b>Backdrop TV &amp; panel kayu</b><span>Interior custom</span></figcaption></figure>
+        <figure class="p" data-g="klasik"><img src="img/klasik-island-2-s.webp" data-big="img/klasik-island-2.webp" alt="Dapur klasik dengan kabinet kaca bermotif silang dan backsplash mozaik" loading="lazy" width="720" height="900"><figcaption><b>Kabinet kaca motif silang</b><span>Kebayoran Heights</span></figcaption></figure>
+        <figure class="p p-wide" data-g="interior"><img src="img/lemari-pakaian-s.webp" data-big="img/lemari-pakaian.webp" alt="Lemari pakaian custom dengan rak, gantungan, dan laci" loading="lazy" width="720" height="377"><figcaption><b>Lemari pakaian sesuai kebutuhan</b><span>Interior custom</span></figcaption></figure>
+        <figure class="p" data-g="modern"><img src="img/putih-island-3-s.webp" data-big="img/putih-island-3.webp" alt="Dapur putih bentuk L dengan kompor tanam dan kulkas dua pintu" loading="lazy" width="720" height="900"><figcaption><b>Bentuk L, alur kerja lega</b><span>Caribbean Island</span></figcaption></figure>
+        <figure class="p" data-g="interior"><img src="img/lemari-kaca-s.webp" data-big="img/lemari-kaca.webp" alt="Lemari sudut kayu dengan pintu kaca berbingkai aluminium" loading="lazy" width="720" height="900"><figcaption><b>Lemari sudut pintu kaca</b><span>Interior custom</span></figcaption></figure>
+        <figure class="p" data-g="klasik"><img src="img/perapian-klasik-s.webp" data-big="img/perapian-klasik.webp" alt="Bingkai perapian klasik warna putih" loading="lazy" width="720" height="900"><figcaption><b>Detail klasik ruang keluarga</b><span>Kebayoran Heights</span></figcaption></figure>
       </div>
     </div>
-    <div class="shot rv">
-      <img src="img/hero.jpg" alt="Smart Kitchen Set di Serpong" width="1000" height="1250">
-      <div class="badge"><b>4,5</b><div class="stars">★★★★★</div><small>dari 4 ulasan</small></div>
+  </section>
+
+  <!-- SEBELUM / SESUDAH -->
+  <section class="sec sec-stone" id="transformasi">
+    <div class="wrap ba-grid">
+      <div class="ba-text">
+        <p class="kicker rv">Sebelum &amp; sesudah</p>
+        <h2 class="rv">Ruang yang sama, <em>rasa yang berbeda.</em></h2>
+        <p class="rv">Proyek kitchen set di Kebayoran Heights, Tangerang, selesai dalam 2–3 minggu. Hasil akhirnya dapur klasik dengan island berwarna gelap, meja batu, backsplash mozaik, dan kabinet kaca bermotif silang.</p>
+      </div>
+      <div class="ba2">
+        <figure class="ba2-before rv"><img src="img/sebelum-s.webp" alt="Sebelum: dapur saat proses pengerjaan" width="720" height="900" loading="lazy"><figcaption>Sebelum</figcaption></figure>
+        <figure class="ba2-after rv"><img src="img/sesudah-ruang.webp" alt="Sesudah: dapur klasik dengan island gelap, lampu kristal, dan backsplash mozaik" width="1440" height="1800" loading="lazy"><figcaption>Sesudah</figcaption></figure>
+      </div>
     </div>
   </section>
 
-  <div class="strip" aria-hidden="true"><div>Bangun baru <i>✦</i> Renovasi <i>✦</i> Interior <i>✦</i> Serpong <i>✦</i> Penawaran gratis <i>✦</i> Bangun baru <i>✦</i> Renovasi <i>✦</i> Interior <i>✦</i> Serpong <i>✦</i> Penawaran gratis <i>✦</i> </div></div>
-
-  <section class="wrap about" id="tentang">
-    <div class="rv">
-      <p class="eyebrow">Tentang kami</p>
-      <h2>Rinciannya dibuka <em>dari awal.</em></h2>
-    </div>
-    <div class="rv">
-      <p>Sebelum mulai, kamu terima rincian bahan, upah, dan jadwal. Kalau ada perubahan di tengah jalan, dibicarakan dulu, bukan langsung ditagih.</p>
-      <div class="facts"><div><b>4,5</b><span>rating dari 4 ulasan</span></div><div><b>Rincian</b><span>sebelum mulai</span></div><div><b>Progres</b><span>dilaporkan berkala</span></div></div>
-    </div>
-  </section>
-
-  <section class="offer" id="layanan">
+  <!-- KONFIGURATOR 3D -->
+  <section class="sec" id="rancang">
     <div class="wrap">
-      <p class="eyebrow rv">Layanan</p>
-      <h2 class="rv">Yang biasa <em>kami kerjakan.</em></h2>
-      <div class="offer-grid">
-        <div class="rv"><img src="img/2.jpg" alt="Hasil pekerjaan Smart Kitchen Set" width="1000" height="1000" loading="lazy"><p class="cap">Salah satu pekerjaan kami.</p></div>
-        <div class="list rv">
-          <h3>Bangunan</h3>
-<div class="item"><b>Bangun baru</b><span>rumah &amp; ruko</span></div>
-<div class="item"><b>Renovasi</b><span>sebagian atau total</span></div>
-<div class="item"><b>Atap &amp; struktur</b><span>perbaikan bocor</span></div>
-<h3>Interior</h3>
-<div class="item"><b>Kitchen set &amp; lemari</b><span>custom ukuran</span></div>
-<div class="item"><b>Plafon &amp; partisi</b><span>ruang jadi rapi</span></div>
+      <div class="sec-head">
+        <p class="kicker rv">Rancang sendiri</p>
+        <h2 class="rv">Coba susun dapur Anda, <em>lihat bentuknya, ketahui kisaran biayanya.</em></h2>
+        <p class="sec-lead rv">Atur bentuk, ukuran, dan material. Model 3D dan estimasi harga berubah seketika. Kalau sudah cocok, kirim rancangan ini ke tim kami untuk dihitung pasti setelah survei.</p>
+      </div>
 
-          <a class="btn" href="https://wa.me/6282123842211?text=Halo%20Smart%20Kitchen%20Set%2C%20boleh%20minta%20rincian%20biaya%20per%20meter%3F" target="_blank" rel="noopener">Minta rincian biaya</a>
+      <div class="cfg rv">
+        <div class="cfg-stage">
+          <div class="cfg-canvas" id="cfg-canvas" aria-label="Pratinjau 3D dapur, seret untuk memutar" role="img">
+            <div class="cfg-loading" id="cfg-loading"><span></span>Menyiapkan ruang 3D…</div>
+          </div>
+          <div class="cfg-stage-tools">
+            <button class="chip" id="cfg-light" aria-pressed="false">Lampu malam</button>
+            <button class="chip" id="cfg-reset">Pandangan awal</button>
+          </div>
+          <p class="cfg-tip">Seret untuk memutar · cubit atau scroll untuk mendekat</p>
+        </div>
+
+        <form class="cfg-panel" id="cfg-form" onsubmit="return false">
+          <fieldset>
+            <legend>1. Bentuk dapur</legend>
+            <div class="opt-row opt-4">
+              <label class="opt"><input type="radio" name="bentuk" value="I" checked><span><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="8" width="28" height="7"/></svg>Lurus</span></label>
+              <label class="opt"><input type="radio" name="bentuk" value="L"><span><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="8" width="28" height="7"/><rect x="6" y="8" width="7" height="26"/></svg>Huruf L</span></label>
+              <label class="opt"><input type="radio" name="bentuk" value="U"><span><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="8" width="28" height="7"/><rect x="6" y="8" width="7" height="26"/><rect x="27" y="8" width="7" height="26"/></svg>Huruf U</span></label>
+              <label class="opt"><input type="radio" name="bentuk" value="P"><span><svg viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="8" width="28" height="7"/><rect x="12" y="25" width="16" height="7"/></svg>+ Island</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Ukuran</legend>
+            <label class="range"><span>Dinding utama <output id="o-a">3,0 m</output></span><input type="range" name="a" min="1.5" max="5" step="0.1" value="3"></label>
+            <label class="range" data-for="L U"><span>Sisi kiri <output id="o-b">2,2 m</output></span><input type="range" name="b" min="1.2" max="4" step="0.1" value="2.2"></label>
+            <label class="range" data-for="U"><span>Sisi kanan <output id="o-c">2,2 m</output></span><input type="range" name="c" min="1.2" max="4" step="0.1" value="2.2"></label>
+            <label class="range" data-for="P"><span>Panjang island <output id="o-d">1,8 m</output></span><input type="range" name="d" min="1.2" max="3" step="0.1" value="1.8"></label>
+            <label class="toggle"><input type="checkbox" name="atas" checked><span>Kabinet atas (gantung)</span></label>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Finishing kabinet</legend>
+            <div class="swatches" id="sw-kabinet"></div>
+            <p class="opt-note" id="note-kabinet"></p>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Meja (countertop)</legend>
+            <div class="swatches" id="sw-top"></div>
+            <p class="opt-note" id="note-top"></p>
+          </fieldset>
+
+          <fieldset>
+            <legend>5. Pegangan pintu</legend>
+            <div class="opt-row opt-3">
+              <label class="opt opt-text"><input type="radio" name="handle" value="tanam" checked><span>Tanam (tanpa handle)</span></label>
+              <label class="opt opt-text"><input type="radio" name="handle" value="bar"><span>Batang hitam</span></label>
+              <label class="opt opt-text"><input type="radio" name="handle" value="emas"><span>Batang emas</span></label>
+            </div>
+          </fieldset>
+
+          <div class="cfg-total" aria-live="polite">
+            <p class="cfg-total-label">Estimasi awal</p>
+            <p class="cfg-total-price" id="cfg-price">Rp —</p>
+            <p class="cfg-total-meta" id="cfg-meta"></p>
+            <a class="btn btn-ink btn-block" id="cfg-send" href="#">Kirim rancangan ini via WhatsApp</a>
+            <p class="cfg-disclaimer">Angka di atas adalah kisaran awal untuk membantu Anda merencanakan anggaran. Harga final ditentukan setelah survei dan pengukuran di lokasi.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIAL -->
+  <section class="sec sec-ink" id="material">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker rv">Panduan material</p>
+        <h2 class="rv">Meja dapur dipakai setiap hari. <em>Pilih yang cocok dengan cara Anda memasak.</em></h2>
+      </div>
+      <div class="mat-grid">
+        <article class="mat rv">
+          <img src="img/top-quartz-s.webp" alt="Meja quartz putih dengan urat abu-abu halus" width="720" height="273" loading="lazy">
+          <h3>Quartz Stone</h3>
+          <p>Kuarsa dan resin. Hasil akhir mengkilap, motif paling beragam, harga paling bersahabat di kelas batu.</p>
+          <dl class="meter">
+            <div><dt>Tahan noda</dt><dd><i style="--v:3"></i>Tinggi</dd></div>
+            <div><dt>Tahan panas</dt><dd><i style="--v:2"></i>Sedang</dd></div>
+            <div><dt>Tahan gores</dt><dd><i style="--v:3"></i>Tinggi</dd></div>
+            <div><dt>Tebal</dt><dd class="plain">12 mm ke atas</dd></div>
+          </dl>
+          <p class="mat-fit">Cocok untuk: dapur bersih (dry kitchen), tampilan terang dan rapi.</p>
+        </article>
+        <article class="mat rv">
+          <img src="img/top-solid-s.webp" alt="Meja solid surface abu-abu dengan bak cuci menyatu" width="720" height="273" loading="lazy">
+          <h3>Solid Surface</h3>
+          <p>Campuran mineral dan pigmen yang dipanaskan pada suhu tinggi. Bisa doff atau dipoles, sambungan nyaris tak terlihat.</p>
+          <dl class="meter">
+            <div><dt>Tahan noda</dt><dd><i style="--v:3"></i>Tinggi</dd></div>
+            <div><dt>Tahan panas</dt><dd><i style="--v:3"></i>Tinggi</dd></div>
+            <div><dt>Tahan lembap</dt><dd><i style="--v:3"></i>Tinggi</dd></div>
+            <div><dt>Tebal</dt><dd class="plain">12 mm</dd></div>
+          </dl>
+          <p class="mat-fit">Cocok untuk: tampilan menyatu tanpa garis, bak cuci terintegrasi.</p>
+        </article>
+        <article class="mat rv">
+          <img src="img/top-granit-s.webp" alt="Meja granit abu-abu dengan motif batu alami" width="720" height="273" loading="lazy">
+          <h3>Granit &amp; Marmer</h3>
+          <p>Batu alam. Motif setiap lembar berbeda, jadi tidak ada dua dapur yang sama persis. Kesan paling mewah.</p>
+          <dl class="meter">
+            <div><dt>Tahan noda</dt><dd><i style="--v:3"></i>Tinggi</dd></div>
+            <div><dt>Tahan panas</dt><dd><i style="--v:3"></i>Tinggi</dd></div>
+            <div><dt>Tahan gores</dt><dd><i style="--v:3"></i>Tinggi</dd></div>
+            <div><dt>Tebal</dt><dd class="plain">1,8–2 cm</dd></div>
+          </dl>
+          <p class="mat-fit">Cocok untuk: dapur basah, masak berat, tampilan mewah.</p>
+        </article>
+      </div>
+      <div class="finish rv">
+        <h3>Finishing kabinet</h3>
+        <div class="finish-row">
+          <div><b>HPL</b><p>Lapisan tekanan tinggi di atas multipleks. Tahan gores, mudah dibersihkan, ratusan pilihan motif kayu dan warna solid. Pilihan paling seimbang untuk harga dan ketahanan.</p></div>
+          <div><b>Duco</b><p>Cat berlapis yang diamplas dan disemprot berulang. Permukaan mulus tanpa sambungan, bisa doff atau glossy, warna bebas sesuai kode cat. Kesan paling halus dan premium.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <section class="wrap visit" id="lokasi">
-    <div class="rv">
-      <p class="eyebrow">Mampir</p>
-      <h2>Workshop kami di <em>Serpong.</em></h2>
-      <dl>
-        <dt>Alamat</dt>
-        <dd>Jl. Raya Serpong Kilometer 7 No.37, RT.8/RW.3, Pakulonan, Kec. Serpong Utara, Kota Tangerang Selatan, Banten 15325</dd>
-<dt>Jam buka</dt><dd style='font-size:.95rem;line-height:1.9'>Rabu &middot; 08.30–17.00<br>Kamis &middot; 08.30–17.00<br>Jumat &middot; 08.30–19.00<br>Sabtu &middot; 08.30–17.00<br>Minggu &middot; 08.30–17.00<br>Senin &middot; 08.30–19.00<br>Selasa &middot; 08.30–17.00</dd>
-        <dt>WhatsApp</dt>
-        <dd><a href="https://wa.me/6282123842211" target="_blank" rel="noopener">0821-2384-2211</a></dd>
-        
-      </dl>
-      <div class="cta">
-        <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.2547802,106.6512566" target="_blank" rel="noopener">Petunjuk arah</a>
+  <!-- PROSES -->
+  <section class="sec" id="proses">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker rv">Proses kerja</p>
+        <h2 class="rv">Satu tim dari survei <em>sampai serah terima.</em></h2>
       </div>
-    </div>
-    <div class="map rv">
-      <iframe title="Peta lokasi Smart Kitchen Set" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=106.6462566,-6.2575802,106.65625659999999,-6.2519802&amp;layer=mapnik&amp;marker=-6.2547802,106.6512566"></iframe>
+      <ol class="steps">
+        <li class="step rv">
+          <span class="step-n">01</span>
+          <div><h3>Konsultasi</h3><p>Ceritakan kebutuhan lewat WhatsApp: foto ruangan, ukuran kasar, gaya yang Anda suka. Gratis.</p></div>
+        </li>
+        <li class="step rv">
+          <span class="step-n">02</span>
+          <div><h3>Survei &amp; ukur</h3><p>Tim datang mengukur detail: titik air, listrik, gas, dan kemiringan dinding yang sering luput.</p></div>
+        </li>
+        <li class="step rv">
+          <span class="step-n">03</span>
+          <div><h3>Desain &amp; penawaran rinci</h3><p>Anda menerima gambar desain dan rincian bahan per bagian, jadi tahu persis apa yang dibayar.</p></div>
+        </li>
+        <li class="step rv">
+          <span class="step-n">04</span>
+          <div><h3>Produksi di workshop</h3><p>Dikerjakan di workshop kami sendiri di Serpong, bukan dilempar ke pihak lain.</p></div>
+        </li>
+        <li class="step rv">
+          <span class="step-n">05</span>
+          <div><h3>Pemasangan &amp; garansi</h3><p>Dipasang tim berpengalaman, dicek bersama saat serah terima, dan bergaransi.</p></div>
+        </li>
+      </ol>
+      <div class="proses-foto">
+        <figure class="rv"><img src="img/produksi-s.webp" alt="Tukang sedang mengerjakan panel kabinet di workshop" width="720" height="377" loading="lazy"><figcaption>Produksi di workshop</figcaption></figure>
+        <figure class="rv"><img src="img/pengiriman-s.webp" alt="Tim memuat kabinet ke truk untuk dikirim" width="720" height="377" loading="lazy"><figcaption>Pengiriman ke lokasi</figcaption></figure>
+        <figure class="rv"><img src="img/pemasangan-s.webp" alt="Tukang memasang lemari di rumah klien" width="720" height="377" loading="lazy"><figcaption>Pemasangan</figcaption></figure>
+        <figure class="rv"><img src="img/serah-terima-s.webp" alt="Pemilik rumah dan tim berdiri di dapur yang sudah selesai" width="720" height="377" loading="lazy"><figcaption>Serah terima dengan pemilik rumah</figcaption></figure>
+      </div>
     </div>
   </section>
 
-  <section class="closing">
-    <div class="wrap rv">
-      <h2>Punya denah atau foto lokasi? <em>Kirim, kami hitungkan.</em></h2>
-      <a class="btn" href="https://wa.me/6282123842211?text=Halo%20Smart%20Kitchen%20Set%2C%20saya%20mau%20minta%20penawaran" target="_blank" rel="noopener">Minta penawaran</a>
+  <!-- BUKTI -->
+  <section class="sec sec-stone">
+    <div class="wrap proof">
+      <div class="proof-rating rv">
+        <p class="proof-num">4,5</p>
+        <p class="proof-stars" aria-label="Rating 4,5 dari 5">★★★★<span>★</span></p>
+        <p>Rating Google dari pelanggan<br>di workshop Serpong</p>
+      </div>
+      <blockquote class="proof-quote rv">
+        <p>“Mampu memberikan solusi terbaik untuk kebutuhan pelanggan, dengan tenaga ahli dan tenaga lapangan yang terlatih.”</p>
+        <footer>Prinsip kerja SMART sejak 2002</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" id="tanya">
+    <div class="wrap faq-grid">
+      <div class="sec-head">
+        <p class="kicker rv">Tanya jawab</p>
+        <h2 class="rv">Yang biasanya <em>ditanyakan dulu.</em></h2>
+        <a class="btn btn-ghost rv" data-wa="tanya" href="#">Pertanyaan lain? Tanya langsung</a>
+      </div>
+      <div class="faq">
+        <details class="rv"><summary>Berapa lama pengerjaan kitchen set?</summary><p>Umumnya 2–3 minggu dari desain disetujui sampai terpasang, tergantung ukuran dan material. Jadwal pastinya kami tulis di penawaran.</p></details>
+        <details class="rv"><summary>Apakah estimasi di konfigurator sudah harga final?</summary><p>Belum. Itu kisaran awal supaya Anda bisa merencanakan anggaran. Harga final dihitung setelah survei, karena kondisi dinding, titik air, dan aksesori (rel laci, engsel soft-close, lampu) memengaruhi biaya.</p></details>
+        <details class="rv"><summary>Area mana saja yang dilayani?</summary><p>BSD, Serpong, Alam Sutera, Tangerang, Tangerang Selatan, dan Jakarta. Di luar itu, tanyakan dulu lewat WhatsApp.</p></details>
+        <details class="rv"><summary>Selain dapur, bisa buat apa lagi?</summary><p>Lemari pakaian, walk-in closet, backdrop TV, panel dinding, rak, dan interior custom lain, untuk rumah maupun proyek komersial.</p></details>
+        <details class="rv"><summary>Apakah ada garansi?</summary><p>Ya, setiap pekerjaan bergaransi. Ketentuan lengkapnya dijelaskan saat penawaran.</p></details>
+        <details class="rv"><summary>Bisa lihat contoh bahan sebelum memesan?</summary><p>Bisa. Silakan mampir ke workshop di Jl. Raya Serpong, atau minta tim membawa sampel saat survei.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAK -->
+  <section class="sec sec-ink" id="kontak">
+    <div class="wrap kontak-grid">
+      <div>
+        <p class="kicker rv">Mampir ke workshop</p>
+        <h2 class="rv">Lihat bahan langsung, <em>ngobrol dengan pembuatnya.</em></h2>
+        <dl class="kontak-dl rv">
+          <dt>Alamat</dt>
+          <dd>Jl. Raya Serpong KM 7 No. 37, Pakulonan, Serpong Utara, Tangerang Selatan, Banten 15325</dd>
+          <dt>Jam buka</dt>
+          <dd>Setiap hari 08.30–17.00<br><span class="muted">Senin &amp; Jumat sampai 19.00</span></dd>
+          <dt>WhatsApp</dt>
+          <dd><a data-wa="umum" href="#">0821-2384-2211</a></dd>
+          <dt>Instagram</dt>
+          <dd><a href="https://www.instagram.com/smartkitchenset/" target="_blank" rel="noopener">@smartkitchenset</a></dd>
+        </dl>
+        <div class="hero-cta rv">
+          <a class="btn btn-light" data-wa="umum" href="#">Chat WhatsApp</a>
+          <a class="btn btn-ghost-light" href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.2547802,106.6512566" target="_blank" rel="noopener">Petunjuk arah</a>
+        </div>
+      </div>
+      <div class="map rv">
+        <iframe title="Peta lokasi workshop SMART di Serpong" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=106.6462566,-6.2575802,106.6562566,-6.2519802&amp;layer=mapnik&amp;marker=-6.2547802,106.6512566"></iframe>
+      </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© 2026 Smart Kitchen Set · Serpong</span>
-    <span><a href="https://wa.me/6282123842211" target="_blank" rel="noopener">WhatsApp</a></span>
-  </div><div class="wrap"><div class="credit">Contoh tampilan website, dibuat oleh Baqil &middot; <a href="https://wa.me/628131880038" target="_blank" rel="noopener">0813-1880-038</a></div></div>
+<footer class="foot">
+  <div class="wrap foot-row">
+    <div>
+      <span class="brand-word">SMART</span>
+      <p class="muted">Kitchen &amp; Interior Specialist · sejak 2002</p>
+    </div>
+    <p class="muted">© 2026 SMART Kitchen Set · Serpong, Tangerang Selatan</p>
+  </div>
+  <div class="wrap credit">Contoh tampilan website, dibuat oleh Baqil · <a href="https://wa.me/628131880038" target="_blank" rel="noopener">0813-1880-038</a></div>
 </footer>
 
-<a class="wa" href="https://wa.me/6282123842211" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.3.7 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg>
-</a>
+<!-- bar bawah HP -->
+<div class="dock" id="dock">
+  <a href="#rancang" class="dock-btn">Rancang 3D</a>
+  <a data-wa="umum" href="#" class="dock-btn dock-wa">WhatsApp</a>
+</div>
 
-<script>
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-</script>
+<!-- lightbox -->
+<dialog class="lb" id="lb" aria-label="Foto proyek">
+  <button class="lb-x" aria-label="Tutup">×</button>
+  <button class="lb-nav lb-prev" aria-label="Foto sebelumnya">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-nav lb-next" aria-label="Foto berikutnya">›</button>
+</dialog>
+
+<script src="js/main.js" defer></script>
+<script type="module" src="js/konfigurator.js"></script>
 </body>
 </html>
