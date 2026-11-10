@@ -29,6 +29,14 @@
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
 
+    <!-- Swarm build: sembunyikan konten SEBELUM render supaya tidak berkedip (lihat Swarm.tsx) -->
+    <script>
+      try {
+        var q = new URLSearchParams(location.search).has("build");
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches && (q || (!location.hash && localStorage.getItem("baqil-built-v1") !== "1")))
+          document.documentElement.classList.add("building");
+      } catch (e) {}
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,10 +57,10 @@
       }
     </script>
 
-    <script type="module" crossorigin src="/assets/index-DoqhxR9r.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DgptRKbx.css">
+    <script type="module" crossorigin src="/assets/index-D5VkWjF_.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-qxBuDFaW.css">
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root"></div>
   </body>
 </html>
