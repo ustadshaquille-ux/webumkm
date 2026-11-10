@@ -104,7 +104,7 @@
     // the one big moment: the title sets itself, the photo drops in
     document.fonts.ready.then(() => {
       const s = SplitText.create(".sampul-judul span", { type: "chars", mask: "chars" });
-      gsap.timeline({ delay: baruMasuk ? 0.1 : 0.3 })
+      gsap.timeline({ delay: baruMasuk ? 0.1 : 0.3, onComplete: () => s.revert() }) // lepas masker: ekor huruf (y) tidak terpotong
         .from(".sampul-atas", { opacity: 0, x: -20, duration: 0.8, ease: "power3.out" })
         .from(s.chars, { yPercent: 115, duration: 1.1, ease: "expo.out", stagger: 0.05 }, "-=0.4")
         .from(".sampul-foto", { y: -120, rotate: -14, opacity: 0, duration: 1.4, ease: "expo.out" }, "-=1.1")
