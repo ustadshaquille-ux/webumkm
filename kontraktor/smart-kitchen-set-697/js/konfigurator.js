@@ -14,7 +14,7 @@ const TARIF = {
 const KABINET = [
   { id: 'putih',  nama: 'HPL Putih Doff',  grup: 'hpl',     warna: '#efece6', kasar: 0.62, tekstur: null,  info: 'HPL putih doff. Bersih, terang, tahan gores, mudah dirawat.' },
   { id: 'oak',    nama: 'HPL Oak Natural', grup: 'hplKayu', warna: '#c9a57c', kasar: 0.7,  tekstur: 'oak',    info: 'Motif kayu oak terang. Hangat dan cocok untuk gaya Scandinavian.' },
-  { id: 'walnut', nama: 'HPL Walnut',      grup: 'hplKayu', warna: '#6b4a33', kasar: 0.66, tekstur: 'walnut', info: 'Motif walnut gelap. Kesan elegan dan tenang.' },
+  { id: 'walnut', nama: 'Melamic Teakwood', grup: 'hplKayu', warna: '#6b4a33', kasar: 0.66, tekstur: 'walnut', info: 'Serat kayu Teakwood (jati) dengan finishing melamic. Hangat, alami, dan elegan.' },
   { id: 'greige', nama: 'Duco Greige',     grup: 'duco',    warna: '#cfc5b6', kasar: 0.45, tekstur: null,  info: 'Cat duco greige (abu-krem). Permukaan mulus tanpa sambungan.' },
   { id: 'sage',   nama: 'Duco Sage',       grup: 'duco',    warna: '#9ba48f', kasar: 0.45, tekstur: null,  info: 'Duco hijau sage. Lembut, segar, sedang banyak dicari.' },
   { id: 'navy',   nama: 'Duco Navy',       grup: 'duco',    warna: '#2f3a4a', kasar: 0.4,  tekstur: null,  info: 'Duco biru navy. Tegas dan mewah, cantik dipadu handle emas.' },
