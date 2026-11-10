@@ -1,0 +1,42 @@
+name: Update ulasan Google - Fisio Puri Bintaro
+
+on:
+  schedule:
+    - cron: "0 22 * * *"   # tiap hari 05.00 WIB
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: ulasan-fisio
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pasang Playwright
+        run: |
+          pip install playwright==1.48.0
+          python -m playwright install --with-deps chromium
+      - name: Ambil ulasan
+        run: python .github/scripts/ulasan_fisio.py
+      - name: Commit kalau berubah
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          F=klinik/praktek-fisioterapi-puri-bintaro-hijau-595/ulasan.json
+          if git diff --quiet -- "$F"; then echo "tidak ada perubahan"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$F"
+          git commit -m "Fisio Puri Bintaro: update ulasan Google otomatis"
+          git pull --rebase -q && git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "rebuild Pages lewat push biasa"
