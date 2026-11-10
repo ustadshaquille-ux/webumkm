@@ -27,7 +27,7 @@
     await tunggu(500);
     await bilang("hi 😭", 900);
     await bilang("one question before you come in", 1300);
-    await bilang("what do we call each other?", 1200);
+    await bilang("what do you call me?", 1200);
     form.classList.add("siap");
     $("#jawab").focus({ preventScroll: true });
     setTimeout(() => bantu.classList.add("siap"), diam ? 0 : 6000);
@@ -39,11 +39,11 @@
     if (!v) return;
     gelembung(v, "kanan");
     inp.value = "";
-    if (/^s+e+n+g+$/i.test(v)) {
+    if (/^p+r+u+y+$/i.test(v)) {
       form.classList.remove("siap");
       bantu.classList.remove("siap");
       await bilang("correct 😭", 700);
-      await bilang("come in, seng", 900);
+      await bilang("come in, kia", 900);
       await tunggu(700);
       buka();
     } else {
@@ -55,7 +55,7 @@
   });
   bantu.addEventListener("click", () => {
     bantu.classList.remove("siap");
-    bilang("hint: used 514 times. starts with s. the g can be as long as you want", 600);
+    bilang("hint: you said it first, on the very first night. 4 letters, starts with p", 600);
   });
 
   function buka() {
