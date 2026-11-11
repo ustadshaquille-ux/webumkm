@@ -29,12 +29,12 @@
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Swarm build: sembunyikan konten SEBELUM render supaya tidak berkedip (lihat Swarm.tsx) -->
+    <!-- Intro dua desainer: pasang draf hero SEBELUM render supaya tidak berkedip (lihat IntroDesain.tsx) -->
     <script>
       try {
         var q = new URLSearchParams(location.search).has("build");
-        if (!matchMedia("(prefers-reduced-motion: reduce)").matches && (q || (!location.hash && localStorage.getItem("baqil-built-v2") !== "1")))
-          document.documentElement.classList.add("building");
+        if (!matchMedia("(prefers-reduced-motion: reduce)").matches && (q || (!location.hash && localStorage.getItem("baqil-intro-v3") !== "1")))
+          document.documentElement.classList.add("intro-desain");
       } catch (e) {}
     </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -57,8 +57,8 @@
       }
     </script>
 
-    <script type="module" crossorigin src="/assets/index-DItBwxav.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-c8rG1chy.css">
+    <script type="module" crossorigin src="/assets/index-D7-2Pn_9.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index--MTgSfF_.css">
   </head>
   <body>
     <div id="root"></div>
