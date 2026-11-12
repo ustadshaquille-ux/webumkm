@@ -1,0 +1,1145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Last Seen at 1 A.M.</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#14110f; --bg2:#201a16; --paper:#f4ecdc; --paper2:#ece1cb; --ink:#2a211b; --ink-soft:#6b5a4b;
+  --accent:#8c2f2b; --gold:#b89a5e; --ines:#e9dcc2; --saqil:#d9c7a3;
+  --serif:"EB Garamond", Georgia, "Times New Roman", serif;
+  --display:"Cormorant Garamond", "EB Garamond", Georgia, serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:radial-gradient(ellipse at 50% 40%, #2b231d 0%, var(--bg) 70%);color:var(--paper);font-family:var(--serif);overflow:hidden;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums}
+#stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:56px}
+#bookwrap{position:relative}
+.book-shadow{filter:drop-shadow(0 30px 40px rgba(0,0,0,.55))}
+
+/* ---------- pages ---------- */
+.page{background:var(--paper);color:var(--ink);overflow:hidden;position:relative}
+.page.paper{background:
+  radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.35), rgba(0,0,0,0) 70%),
+  linear-gradient(180deg,var(--paper),var(--paper2))}
+.page.paper.--left, .page.paper.left-side{box-shadow:inset -18px 0 28px -18px rgba(60,40,20,.35)}
+.page.paper.--right, .page.paper.right-side{box-shadow:inset 18px 0 28px -18px rgba(60,40,20,.35)}
+.pinner{position:absolute;inset:0;padding:var(--pt) var(--px) var(--pb);display:flex;flex-direction:column}
+.running{position:absolute;top:calc(var(--pt)*.42);left:var(--px);right:var(--px);text-align:center;font-family:var(--display);font-style:italic;font-size:.78em;letter-spacing:.06em;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.folio{position:absolute;bottom:calc(var(--pb)*.38);left:0;right:0;text-align:center;font-family:var(--display);font-size:.82em;color:var(--ink-soft);letter-spacing:.08em}
+.content{flex:1;overflow:hidden;font-size:var(--fs);line-height:1.58;hyphens:auto;-webkit-hyphens:auto;text-align:justify}
+.content p{text-indent:1.4em;margin:0}
+.content p.first,.content p.cont,.content p.noind{text-indent:0}
+.content p.first{display:flow-root}
+.content p.first::first-letter{font-family:var(--display);float:left;font-size:3.35em;line-height:.82;padding:.06em .08em 0 0;color:var(--accent)}
+.content p.c{text-align:center;text-indent:0;font-style:italic}
+.content .brk{text-align:center;color:var(--gold);letter-spacing:.6em;margin:.55em 0 .5em;font-size:.9em;padding-left:.6em}
+.chap-head{text-align:center;padding-top:8%;margin-bottom:1.6em}
+.chap-head .num{font-family:var(--display);font-size:.85em;letter-spacing:.35em;text-transform:uppercase;color:var(--ink-soft)}
+.chap-head .ttl{font-family:var(--display);font-weight:500;font-size:2.15em;line-height:1.1;margin:.35em 0 .3em;color:var(--ink)}
+.chap-head .when{font-style:italic;font-size:.9em;color:var(--ink-soft)}
+.chap-head .orn{display:block;margin:.8em auto 0;width:3.2em;height:1px;background:var(--gold);position:relative}
+.chap-head .orn::after{content:"";position:absolute;left:50%;top:50%;width:.42em;height:.42em;background:var(--paper);border:1px solid var(--gold);transform:translate(-50%,-50%) rotate(45deg)}
+
+/* chat excerpts */
+.day{text-align:center;margin:.5em 0 .3em;font-size:.68em;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);font-family:var(--serif)}
+.msg{display:flex;margin:.16em 0;font-size:.86em;line-height:1.38;text-align:left;hyphens:none}
+.msg .b{max-width:82%;padding:.32em .7em .34em;border-radius:.75em;position:relative}
+.msg .t{font-size:.7em;color:var(--ink-soft);margin-left:.55em;white-space:nowrap;font-style:normal}
+.msg.i{justify-content:flex-start}
+.msg.i .b{background:var(--ines);border-top-left-radius:.2em}
+.msg.s{justify-content:flex-end}
+.msg.s .b{background:var(--saqil);border-top-right-radius:.2em}
+.msg .b.del{font-style:italic;color:var(--ink-soft);background:transparent;border:1px dashed rgba(107,90,75,.45)}
+.msg .who{display:block;font-size:.68em;letter-spacing:.1em;text-transform:lowercase;color:var(--accent);margin-bottom:.05em;font-variant:small-caps}
+.msgend{height:.45em}
+
+/* cover & special pages */
+.cover{background:
+  radial-gradient(ellipse at 30% 20%, rgba(184,154,94,.18), transparent 55%),
+  linear-gradient(160deg,#3a1715 0%,#24100f 55%,#170b0a 100%);color:#efe2c6}
+.cover .pinner{align-items:center;justify-content:center;text-align:center;padding:12% 10%}
+.cover .frame{position:absolute;inset:5%;border:1px solid rgba(184,154,94,.55)}
+.cover .frame::after{content:"";position:absolute;inset:6px;border:1px solid rgba(184,154,94,.25)}
+.cover .kicker{font-family:var(--display);letter-spacing:.42em;text-transform:uppercase;font-size:.72em;color:var(--gold)}
+.cover h1{font-family:var(--display);font-weight:500;font-size:3.1em;line-height:1;margin:.5em 0 .25em;letter-spacing:.01em}
+.cover h1 em{display:block;font-size:.55em;letter-spacing:.2em;font-style:normal;margin-top:.25em;color:var(--gold)}
+.cover .sub{font-style:italic;font-size:1em;opacity:.85;max-width:16em;margin:0 auto}
+.cover .moon{width:3.4em;height:3.4em;border-radius:50%;margin:0 auto 1.4em;box-shadow:inset -.75em .2em 0 0 #e9d8b0;opacity:.9}
+.cover .auth{position:absolute;bottom:10%;left:0;right:0;font-family:var(--display);letter-spacing:.3em;text-transform:uppercase;font-size:.75em;color:var(--gold)}
+.back .pinner{justify-content:center;align-items:center;text-align:center;padding:14% 12%}
+.back p{font-style:italic;font-size:1.02em;line-height:1.6;opacity:.9}
+.back .orn2{color:var(--gold);letter-spacing:.5em;margin:1.2em 0}
+.center-page .pinner{justify-content:center;align-items:center;text-align:center}
+.titlepage h2{font-family:var(--display);font-weight:500;font-size:2.3em;line-height:1.05}
+.titlepage .by{margin-top:1.4em;font-style:italic;color:var(--ink-soft)}
+.titlepage .pub{position:absolute;bottom:12%;left:0;right:0;font-family:var(--display);letter-spacing:.3em;font-size:.7em;text-transform:uppercase;color:var(--ink-soft)}
+.epi{font-style:italic;font-size:1.05em;line-height:1.6;max-width:17em}
+.epi .src{display:block;margin-top:1em;font-style:normal;font-size:.8em;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+.toc{width:100%;font-size:var(--fs)}
+.toc h3{font-family:var(--display);font-weight:500;font-size:1.7em;text-align:center;margin:6% 0 1.2em}
+.toc a{display:flex;align-items:baseline;gap:.4em;color:var(--ink);text-decoration:none;padding:.22em 0;cursor:pointer}
+.toc a:hover .tt{color:var(--accent)}
+.toc .nn{font-family:var(--display);color:var(--ink-soft);min-width:2.2em;font-size:.9em}
+.toc .dots{flex:1;border-bottom:1px dotted rgba(107,90,75,.5);transform:translateY(-.25em)}
+.toc .pg{font-family:var(--display);color:var(--ink-soft)}
+.blankpage .pinner{justify-content:center;align-items:center;color:var(--gold)}
+
+/* ---------- UI ---------- */
+#bar{position:fixed;left:0;right:0;bottom:0;height:56px;display:flex;align-items:center;justify-content:center;gap:14px;padding:0 16px;font-family:var(--display);color:#cdbb98;z-index:10}
+#bar button{background:transparent;border:1px solid rgba(184,154,94,.35);color:#e8d9b8;border-radius:999px;height:36px;min-width:36px;padding:0 12px;font-family:inherit;font-size:16px;cursor:pointer;transition:background .2s,border-color .2s}
+#bar button:hover{background:rgba(184,154,94,.12);border-color:rgba(184,154,94,.7)}
+#bar button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+#pinfo{min-width:110px;text-align:center;font-size:15px;letter-spacing:.06em}
+#prog{position:fixed;left:0;bottom:0;height:2px;background:var(--gold);width:0;transition:width .4s;z-index:11}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:var(--bg);z-index:20;font-family:var(--display);color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-size:13px;transition:opacity .6s}
+#loading .l{width:120px;height:1px;background:rgba(184,154,94,.25);overflow:hidden;position:relative}
+#loading .l::after{content:"";position:absolute;inset:0;width:40%;background:var(--gold);animation:ld 1.2s infinite ease-in-out}
+@keyframes ld{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
+#measure{position:absolute;left:-9999px;top:0;visibility:hidden}
+#tocpanel{position:fixed;inset:0;background:rgba(10,8,7,.75);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:15;padding:16px}
+#tocpanel.on{display:flex}
+#tocpanel .box{background:var(--paper);color:var(--ink);max-width:440px;width:100%;max-height:85vh;overflow:auto;padding:28px 26px;border-radius:4px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+#tocpanel .box{--fs:17px}
+.hint{position:fixed;top:14px;left:0;right:0;text-align:center;font-family:var(--display);font-style:italic;color:rgba(205,187,152,.55);font-size:14px;pointer-events:none;transition:opacity 1s}
+/* fallback viewer */
+#fallback{display:flex;gap:0}
+#fallback .page{transition:opacity .35s}
+@media (prefers-reduced-motion: reduce){#loading .l::after{animation:none}}
+</style>
+</head>
+<body>
+<div id="loading"><div>Last Seen at 1 A.M.</div><div class="l"></div></div>
+<div class="hint" id="hint">swipe, click the page edges, or use ← → to turn the pages</div>
+<div id="stage"><div id="bookwrap" class="book-shadow"></div></div>
+<div id="bar">
+  <button id="bPrev" aria-label="Previous page">‹</button>
+  <button id="bToc" aria-label="Contents">Contents</button>
+  <span id="pinfo">—</span>
+  <button id="bNext" aria-label="Next page">›</button>
+</div>
+<div id="prog"></div>
+<div id="tocpanel"><div class="box" id="tocbox"></div></div>
+<div id="measure"></div>
+
+<!--
+  MANUSCRIPT FORMAT
+  ## Num | Title | When        chapter heading (starts a new page)
+  @ text                       date chip inside a chat excerpt
+  < 01.17 | text               her message (Ines / "mermaid")
+  > 01.17 | text               his message (Saqil)
+  <x / >x                      deleted message
+  ***                          scene break
+  ~ text                       centred italic line
+  anything else                a paragraph (blank line between paragraphs)
+-->
+<script type="text/plain" id="manuscript">
+## Prologue | Export Chat | 11 November 2026, 1:31 a.m.
+
+At 1:31 in the morning on the eleventh of November, a young man typed a single letter into his phone and sent it to a girl who was no longer his.
+
+@ Wednesday, 11 November 2026
+> 01.31 | p
+> 01.31 | pls
+> 01.31 | answer
+> 01.31 | if you're still awake
+
+She was awake. She was almost always awake at that hour; so was he. If you had asked either of them what time of day they had fallen in love, they would not have been able to tell you, but if you had asked what time of day they had done most of their loving, the answer would have been easy. Somewhere between one and four in the morning. The hours when everyone else is asleep and two people can pretend the world has been built for them alone.
+
+< 01.31 | what is it
+> 01.32 | can i ask you a favour
+< 01.32 | what
+> 01.32 | go to my contact. tap the profile. scroll all the way down
+> 01.32 | there's something that says export chat
+> 01.32 | press the one with media. send it here
+< 01.33 | why
+> 01.33 | just send it without asking. please
+> 01.34 | i'm doing something special right now
+
+Eight minutes later, a file arrived. It was not large, as files go. A few hundred megabytes. Inside it were stickers that nobody would ever send again, voice notes that nobody would ever transcribe, and twenty-eight thousand lines of text. Twenty-eight thousand lines, two years, one boy, one girl, and a great many messages that simply said *this message was deleted* — little ghosts of things somebody had once wanted to say and then, at the last second, had been too proud or too frightened to keep.
+
+People like to believe that love stories are made of grand moments. Rain at an airport. A confession on a rooftop. A ring in a glass of wine.
+
+They are not. Not usually. Most love stories, if you could export them, would turn out to be made of very small things. Of *where are you*. Of *have you eaten*. Of *wake me up at nine*. Of a single letter, sent at one in the morning, that means nothing at all and everything at once.
+
+This is the story of those twenty-eight thousand lines.
+
+Not all of them. Only the ones that mattered — and a few that did not, because, as you will see, those mattered too.
+
+## One | The Letter P | October – December 2024
+
+There are people who begin conversations with *hello*, and people who begin them with *good evening, how are you, I hope I'm not disturbing you*, and then there was Saqil, who began almost everything with a single letter.
+
+*p.*
+
+It is not really a word. In the language they spoke it is something closer to a tap on the shoulder, the digital equivalent of knocking twice on a door you already know is unlocked. It means: *are you there?* It means: *I'm here.* It costs nothing to send, which is precisely why it can cost so much when nobody answers.
+
+He sent it to her for the first time — the first time the phone remembered, at least — at fourteen minutes to one on the eighteenth of October, 2024. Twelve seconds later, she sent it back.
+
+@ Friday, 18 October 2024
+> 00.46 | p
+< 00.46 | p
+
+That was all. Two letters, twelve seconds apart. By then they already belonged to each other, though neither of them could have told you exactly when that had happened. Half an hour later he wished her goodnight, and the word he used for her was *syg* — short for *sayang*, darling — the way you shorten something you intend to say ten thousand more times.
+
+Love, like the first message of a chat, is rarely recorded. We only ever save what comes after.
+
+***
+
+He was the kind of young man people describe with the word *confident* when they like him and *arrogant* when they don't. He drove at night with the windows down. He smoked more than he admitted to, and admitted to more than most people would. He believed, quite sincerely, that he could predict which way a stock would move, and later he would claim that the same talent applied to women — *Ines only*, he would add, as if that made it more modest. He had a habit of explaining a problem by starting from its very origin, the way some people explain a road by describing the mountain it was cut through. He knew this about himself. *Sorry if my words are complicated,* he once wrote to her, *but when I talk about something I have to know where it came from.*
+
+She called him *abang*. It is what a girl in Jakarta calls an older boy — a brother, a protector, the one who is supposed to know the way — and when she said it to him it meant all of those things, and also something softer that had no translation. When she was being sweet she called him *seng*, which was *sayang* worn smooth from use. When she was angry she called him *bang*, short and sharp, like a door closing.
+
+The name that appeared above her messages was *mermaid*.
+
+She was sentimental, and knew it, and said so. She cried for a few days before her period every month, hard, the kind of crying that shakes the shoulders, and she would apologise for it afterwards as if it had been a crime. She had friends from kindergarten, from primary school, from middle school and high school, nearly all of them still living a few streets away, so that being her boyfriend meant being introduced, one by one, to an entire childhood. She sent stickers the way other people breathe.
+
+Their first weeks are mostly silence in the archive — missed calls, a *woiii* sent into the void, a *hi, what are you doing* answered forty minutes later with *driving*. The real conversation had not started yet. It was waiting, the way rain waits behind a hot afternoon.
+
+In December, it broke. One thousand eight hundred and sixty-seven messages in a single month.
+
+***
+
+On the fourth of December, at one in the morning, his phone was dying and hers was in another room. He had just got home. He told her to sleep. She refused. He asked if she was sleepy, then asked again in capital letters, and added a knife, because that is how affection looked between them — a little violent, a little ridiculous, entirely sincere.
+
+@ Wednesday, 4 December 2024
+> 01.25 | are you sleepy
+> 01.25 | are you sleepy, DARLING
+> 01.25 | 🔪
+> 01.28 | come here, kiss first
+< 01.28 | DARLING
+< 01.28 | WAIT
+< 01.28 | I'M IN THE BATHROOM
+> 01.28 | so long
+
+Then something happened that the archive does not explain. Perhaps the call dropped. Perhaps his battery finally gave up. Whatever it was, at a quarter to three she wrote:
+
+< 02.46 | you just hung up and didn't even say love you back
+< 02.46 | 😢😢💔💔💔
+< 02.47 | are you annoyed with me?
+>x 03.02 |
+>x 03.02 |
+>x 03.02 |
+> 03.37 | no way
+> 03.37 | i thought YOU were the one who ended it
+
+Three deleted messages. We will never know what they said. Perhaps they were angry and he thought better of it. Perhaps they were tender and he was embarrassed. Perhaps they were simply typos. That is the cruelty and the mercy of a deleted message: it lets a person be braver in the first draft than in the final one.
+
+An hour later, at 4:32 a.m., he sent the message that would become the most repeated sentence of their entire story.
+
+> 04.32 | please wake me up at 8, 10:50 and 13:30 (if you're up)
+
+Some people say *I love you* with flowers. Some say it with poems. Saqil said it with a list of times he wanted to be woken up. It is a strange kind of trust, to hand someone your mornings. To say: *the first voice I want to hear today is yours, and if I oversleep, it's your fault.*
+
+She took the job. She would keep it, on and off, for two years — long after she had any obligation to.
+
+***
+
+There were other things in December. A night she discovered a secret about a friend only because he had told her to ask. A night he wrote her three long, solemn paragraphs about presidential politics, the kind of thing a student copies into an assignment at two in the morning. And a night — the first real crack — when he wrote something that would echo through the next seven months:
+
+@ Monday, 9 December 2024
+> 02.10 | if you're really that scared of your friends turning on you, then fine. your friends matter more than me
+
+It was a small sentence. Most dangerous sentences are.
+
+## Two | Three Bubbles | January 2025
+
+The party was at a house that belonged to a friend named Salwa, and it was the kind of party Ines had never been to before — she would say so herself, later, a little defensively, as if confessing to a crime she had not enjoyed committing. *I didn't know what to wear,* she wrote. *My friends were all wearing things like that.*
+
+He was there, or near enough to it. Something happened — the archive is vague, the way a phone always is about the things that happen in person. She did not introduce him to her friends. Or she introduced him badly. Or someone from her university looked at him the wrong way and he felt, for the length of a song, like a stranger at his own girlfriend's side.
+
+By three in the morning he had decided that they were finished.
+
+@ Sunday, 26 January 2025
+< 02.54 | bang we are not breaking up
+< 02.54 | and you can't just decide that on your own
+< 02.55 | i'm sorry if you think i replied to you rudely
+> 02.56 | don't say things just to calm me down
+> 02.56 | you said you'd change my mind. but i don't trust you anymore
+< 02.57 | how do i make you trust me again
+< 02.57 | what do i have to do
+> 02.57 | think about it yourself
+> 02.57 | fyi this can only be done right now
+> 02.58 | the longer you take, the more official our breakup gets
+
+There is a particular kind of cruelty that only exists between people who love each other — the cruelty of a test. He did not want to break up. He wanted to be chosen, loudly, in front of everyone, and he did not know how to ask for that, so he set a timer instead.
+
+> 03.01 | i'll give you a chance
+> 03.01 | you have 3 bubbles left to text me
+> 03.02 | if it's more than that and it's still bullshit, i'm blocking you. i'm not joking nes
+> 03.02 | use those 3 bubbles well
+> 03.03 | and now i'm going to sleep
+> 03.04 | fine. i'll give you one extra. last chat. say whatever you want to say to me
+
+He did not go to sleep. Of course he didn't. One minute later he was back, checking.
+
+> 03.04 | wow are you seriously asleep
+< 03.04 | no. i'm still thinking
+
+And then she did the only thing she could think of. She left the party. She walked out into the dark at three in the morning to fetch her motorbike from Salwa's house, to come home, to fix it — whatever *it* was — in person.
+
+It took him a full minute to understand what she was doing. When he did, the whole tone of the story changed in the space of a single breath.
+
+< 03.06 | it's here, i'm going home
+> 03.06 | going home and still breaking up then
+> 03.06 | YOU'RE THE ONE WHO'S GOING TO GET MUGGED
+< 03.07 | calm down i'm walking out
+> 03.07 | WHEN YOU GO GET THE BIKE, IDIOT
+> 03.07 | YES WE'RE NOT BREAKING UP
+> 03.07 | NOW YOU'RE GOING HOME AND I'M EVEN MORE ANNOYED
+> 03.07 | THAT'S NOT WHAT I MEANT
+> 03.07 | THAT IS NOT WHAT I MEANT, ARE YOU CRAZY
+> 03.08 | i'm the one who's worried sick, if that's how it is
+> 03.08 | WHAT I MEANT WAS FOR YOU TO INTRODUCE ME TO YOUR FRIENDS
+
+Read it again. Read it the way she must have read it, standing alone on a dark street with a phone in her hand. *YES WE'RE NOT BREAKING UP.* The breakup had lasted twelve minutes and had been ended not by an apology, not by a promise, but by the simple, terrible image of her in the dark, alone, on a road where things happen to girls at three in the morning.
+
+That is the thing about anger. It is very loud, and very certain, right up until the moment it remembers what it is actually afraid of.
+
+< 03.13 | i'm going back to salwa's
+< 03.13 | i'm sorry i didn't introduce you
+< 03.15 | when they come back i'll introduce you
+< 03.15 | i'm sorry my brain didn't get there
+< 03.15 | bang what should i do
+
+*Bang, what should I do.* Not *you're overreacting*. Not *this is unfair*. Only that. She was nineteen or twenty and walking back through the dark to a party she hadn't wanted to go to, to introduce a boy to her friends because he had asked her to in the most backwards way a person can ask for anything.
+
+He was not easy to love. But she was trying, and he could see it, and for one night, at least, that was enough.
+
+## Three | Dairy Milk or SilverQueen | February 2025
+
+On the fourth of February, a little after three in the morning, Saqil switched languages.
+
+He did that sometimes, when the thing he needed to say was too big for the language he had grown up in. Indonesian was for jokes, for fights, for *where are you* and *have you eaten*. English — his English, uneven and hurried, misspelled in all the places where the feeling outran the fingers — was for the things he could not say with a straight face.
+
+@ Tuesday, 4 February 2025
+> 03.04 | don't be patient with me, cause i love you more than everything, more than you can imagine
+> 03.06 | cause i don't care about your past, or the boys who came before me
+> 03.09 | i can do anything to make you trust me more than i trust you
+> 03.10 | sometimes, this time or next time, it will become the biggest problem, so we have to prepare from now
+> 03.12 | you're my baby, so i can handle you into the future, for the best confident love, or like a love story or something like that
+
+*A love story or something like that.* He did not know, then, that he was writing the first line of one. Nobody ever does.
+
+***
+
+Eight days later, they had the strangest and most honest conversation of their entire relationship.
+
+It began, as their worst nights always began, with something small — a remark he had made about choosing her over his friends that she had heard as a complaint. *If you don't want a girlfriend who sulks,* she wrote, *then don't be so annoying as a man.* And then, at 1:49 a.m., something she had clearly been holding for a long time:
+
+@ Wednesday, 12 February 2025
+< 01.49 | bang you know i'm a really sentimental person, so please stop poking at things that make me overthink and get hurt
+< 01.50 | i know you're joking. it's just that i can't, i don't get your kind of jokes
+
+He told her that she was the only person he had ever told his problems to. That he hated spreading his troubles around. That his friends were always too kind to criticise him honestly, and that if she thought he was a narcissist — well. He admitted it. *I'm handsome, I'm cool, there's nobody like me,* he wrote, perfectly seriously, *but I'm not that arrogant with just anyone.*
+
+And then, somewhere around half past two, the conversation turned into a list.
+
+Neither of them proposed it. It simply happened, the way a fight turns into a confession when both people are too tired to keep pretending. One of them wrote *I don't like it when...* and the other answered with another, and for nearly an hour they took turns, back and forth, like two people emptying their pockets onto a table.
+
+< 02.52 | i don't like it when you promise me things and it's just sweet talk
+< 02.55 | i don't like it when you bullshit. if you can't, or can't yet, then don't say so much
+> 02.57 | i don't like how every cool thing you do, everyone has to know about it
+> 02.59 | i don't like it when you're arrogant (you probably don't notice. it's not always about money)
+< 03.05 | i don't like that you're not sensitive. you always have to be told first. no initiative about things that are right in front of you
+> 03.08 | i don't like that you're too soft (not soft like cute couple soft. soft about how hard life is)
+< 03.09 | i don't like that you don't read my messages. you always only read and answer the last one
+> 03.12 | i don't like it when you wear a dress that's too nice when we're only going to eat fried catfish at a street stall
+> 03.18 | i don't like it when you post any guy, whoever he is, however it is, even a repost, if you're in it and it isn't me
+> 03.24 | i don't like that you always feel right. always the most mature one in the relationship. always solving our problems your way
+
+It is not a pretty list. It is not the kind of thing people put on anniversary cards. But read it closely and you will notice something: every single line is a description of somebody the writer has been watching very, very carefully. Nobody notices what dress you wear to a catfish stall unless they are looking at you.
+
+She did not answer the last one. The archive goes quiet. They slept.
+
+And at 3:40 the next afternoon, as if the night before had never happened, she sent him this:
+
+@ Wednesday, 12 February 2025
+< 15.40 | if you had to choose, dairy milk or silverqueen, which one
+
+That, dear reader, is what love looked like between them. Not the list. What came after the list. The ability to wake up the next day, look at a person who has just told you every single thing that's wrong with you, and ask them which chocolate they want.
+
+## Four | Sahur | March 2025
+
+March was the month of the most messages. Seven thousand, one hundred and seventy of them — more than two hundred a day, more than one every seven minutes of every waking hour. It was also Ramadan, which meant that the nights, which had always belonged to them, now had a reason.
+
+In the fasting month the whole city wakes before dawn to eat *sahur*, the last meal before the sun rises, and for a few weeks the hours they had always stolen were suddenly legitimate. He would pick her up on his motorbike. They would ride around in the blue dark with nowhere in particular to go, and on the way home they would stop and buy something to eat. She described it to someone once, and the message survives:
+
+@ Sunday, 16 March 2025
+< 03.07 | just riding around the two of us, then stopping to buy food for sahur on the way home
+
+That is all. One sentence. But anyone who has ever been young in a city at four in the morning, holding on to somebody's waist on the back of a motorbike while the mosques begin to wake, will know exactly what it meant.
+
+She told him things that month that girls only tell boys they are thinking of marrying. That she wanted, one day, to be the kind of wife who dropped the children off at school and then went to pilates, then to the spa, then to the salon. That if he wanted to bulk up, he should just eat a lot of rice and eat late at night. That a friend of hers was seven months pregnant and getting married in April, and here, look, this is what a religious marriage means and this is what a civil one means, and why it matters which one comes first. She was not asking him anything. She was only telling him. But some information is a question in disguise.
+
+*Actually I miss you,* she wrote, at 3:13 one morning. Not *I miss you*. *Actually* — as if she had been pretending otherwise and had grown tired of it.
+
+***
+
+But March was also the month the cracks began to show through the plaster.
+
+On the sixteenth he wrote her something he believed was care and she received as an insult. It was a question — whether she felt she lacked attention, lacked affection — and he meant it as a doctor means a diagnosis, and she heard it as a stranger sneering.
+
+< 02.07 | when you chat with me you just become cruel. better if you don't. just text me like usual, when you're in the mood
+< 02.07 | i know you mean well but the way you say it is wrong. it hurts. my heart actually hurts
+< 02.10 | if someone loves a person they won't hurt that person's feelings
+> 02.13 | if you love someone you should think about what happens next if you do something
+> 02.22 | nothing you say can hurt me, as long as i still love you
+
+*Nothing you say can hurt me, as long as I still love you.* He meant it as armour. It reads, now, like a warning.
+
+Two nights later, she told him she was jealous. A girl had been messaging him, and he had replied — politely, only small talk, but still. *Hello,* she wrote, in English, the way she did when she was trying to sound braver than she felt, *you already have a girlfriend, help take care of your girlfriend's heart.* And then, almost as an afterthought, a sentence that would take him more than a year to understand: *I don't believe you anymore since.*
+
+Since what, she did not say.
+
+What followed was the longest, most careful conversation of their whole story. Not a fight, exactly. Two people trying very hard to explain the shape of themselves to each other at two in the morning.
+
+@ Tuesday, 18 March 2025
+< 01.28 | honestly i can't. i'm not the kind of girl who can be left alone for a long time once i love someone
+< 01.29 | that's why i always follow up, always text you. i just want to know how you are. i know you need time and space but i can't
+< 01.30 | it's only for you that i try to learn to hold on. i don't know if that sounds dramatic. but if i'm ignored and ignored, i can lose interest......
+< 01.30 | that's why even when you don't reply, i keep trying to make you reply, just to keep my own feelings alive
+
+And he — because this was a night for honesty — told her the truest thing in the whole archive.
+
+> 01.39 | the thing i believe most about you is that you don't fall for people easily, even if you chat with them a lot
+> 01.40 | but i keep thinking you'll cheat on me first. because i cheated once, before
+
+There it is. The mountain the road was cut through. He had been unfaithful once, to someone else, long before her, and ever since he had lived in fear of the same thing being done to him. *Cheat first or get cheated,* he wrote a minute later, half-joking, not joking at all. A man who has once broken something carries the sound of it breaking for a very long time.
+
+She saw it immediately. She was always quicker than he gave her credit for.
+
+< 01.50 | alright so your main point is you want me to be yours? but do you want to be mine?
+< 01.52 | that's it. you want me to be yours but you don't want to be mine. you don't want to be owned. you want to be free, but i still have to belong to you
+< 01.53 | because before you always used to say 'darling sorry if i rarely text, i'm going out with so-and-so, love you, if anything happens just text me'
+> 01.53 | for your information, 90% of my time on my phone is whatsapp. and even then it's only your contact
+
+Both things were true. That is what made it so difficult. He really did spend his whole phone on her, and she really did feel alone. It is possible to be someone's entire screen and still not be in the room with them.
+
+< 02.09 | i want a relationship where you, as my boyfriend, are actually useful. contribute to my life. even small things, whatever. don't keep leaving me feeling lonely. don't keep lying. if you're going to say something, say it from the start, not after it's already over
+< 02.12 | if i was wavering and didn't love you anymore, why would i bother telling you all this so you'd change
+
+And then, at 2:31, the line that should have been printed on the inside cover of every book about two people trying to love each other:
+
+< 02.31 | it's like this: 'i know you can do everything by yourself. but you have me now. so let me keep you company. let me do it.'
+
+## Five | What Cannot Be Taken Back | April 2025
+
+Not every chapter of a love story should be told in full. Some belong only to the two people who lived them, and the most a narrator can do is stand outside the door, at a respectful distance, and report what was said once they came back out.
+
+So this chapter will be quiet.
+
+***
+
+On the seventh of April, at four minutes to midnight, she sent him an apology that is perhaps the most tender thing in the whole archive — not because of what it says but because of how much of it there is. *Sorry, darling, for repeating my mistake,* she wrote, *I only just got home now because I was waiting for Nadya to finish work, then I picked her up, then we went to meet Ajeng, then I drove her home first, her house is in Pondok Ranji, and the back road was closed so I had to go all the way round past the petrol station, and I stopped to buy ginger milk for my mum, that's why I'm so late.*
+
+Every turn of the road. Every errand. The ginger milk. Nobody accounts for their evening that carefully unless they are frightened of being misunderstood — and nobody is frightened of being misunderstood by somebody they do not love.
+
+***
+
+A week later, on the fourteenth, a little after one in the morning, they spoke about the thing that cannot be taken back.
+
+It is enough to say this: there had been a night in his car that lasted until morning, and there had been, later, an afternoon at his house. She had chosen it. She said so, again and again, more clearly than he did — that it had been her own decision, that nobody had forced her, that a girlfriend is still only a girlfriend and that it had been her job, not his, to protect herself. And she said, too, the thing that so many girls in her world are taught to fear: that one day a man might not want her because of it.
+
+@ Monday, 14 April 2025
+< 01.32 | even if in the end we're not meant to be, i've already been learning to let go, to be ikhlas
+< 01.33 | sometimes when everyone's talking about things like that i feel sad about my decision
+< 01.52 | i've even thought, if one day i'm not with you anymore and nobody wants me, it's okay, i won't get married
+> 01.35 | it goes back to me, nes. i'm the one who's wrong. i was the one who did that to you first
+> 01.58 | but a relationship is held by the man. you can blame me for not protecting you
+
+*Ikhlas* is a word with no clean English equivalent. It means to let something go with your whole heart, without resentment, as an offering rather than a loss. It is the word people use at funerals. She was twenty years old and already practising it on him — preparing, a little at a time, for the day she might have to give him back.
+
+And then, in the middle of all that heaviness, she said the most honest thing a person can say.
+
+< 01.36 | after saying all this, if you asked me whether i still want to be with you like that, my answer would still be yes
+
+Love is not always wise. It is almost never tidy. But it is, very often, brave in ways that look like foolishness from the outside.
+
+She asked him how he saw her now. Whether he thought she was too much, too dramatic, thinking too far ahead. He answered with a joke about Megan Fox, which was his way of saying *no*. And then the conversation drifted, as theirs always did, into something small and ordinary — what she would wear tomorrow, jeans and a crop top — and the door closed again, and we are back outside it, where we belong.
+
+## Six | Weton | May – June 2025
+
+There is an old Javanese way of counting days called *weton*. Each person is born on one of the seven days of the week and also on one of the five days of the old Javanese market cycle — *Legi, Pahing, Pon, Wage, Kliwon* — so that every birth falls on one of thirty-five possible combinations, each with its own meaning. For centuries, when two people wanted to marry, their families would take their wetons to an elder, who would add the numbers together and say whether the couple were suited, and on which day it would be safest to join them.
+
+In May, Ines wrote an essay about it.
+
+She sent it to him in pieces, the way students send assignments to the people they trust to read them — paragraph after paragraph of history and culture and Koentjaraningrat, the old Hindu-Buddhist kingdoms, the Islamic acculturation, a case study of wedding-day calculations in Yogyakarta. *Weton,* she had written, in her careful academic Indonesian, *is a way for people to build harmony.*
+
+If there is irony in the universe — and anyone who has ever loved somebody will tell you there is — it was in that month. Because while she was writing about the ancient science of whether two people belong together, the two of them were quietly coming apart.
+
+***
+
+She was tired. That was all, and that was everything.
+
+@ Tuesday, 6 May 2025
+< 23.39 | didn't it cross your mind that the sky was already so dark, so cloudy, whether your girlfriend was okay or not
+< 23.43 | ah i don't know. maybe i'm just being unclear again. i just feel like i need more attention. i'm tired
+< 23.44 | sorry if you think i ask for too much
+< 23.45 | it's like i want to tell someone, i want to cry, i want to complain so much, but i feel like there's no one
+< 23.55 | i'm soooo tired. college, then the hospital to look after my grandma, then helping clean the house. i'm physically exhausted, and you act like you don't care. really, just the bare minimum
+< 23.56 | my chest keeps feeling tight. i keep thinking i'm tired, i want to end it with you
+> 23.58 | tell me. take it out on me. whatever it is, it's okay
+
+He meant it. It was the right answer, and it came two minutes after she needed it — which, in a relationship, can be the same as never coming at all.
+
+***
+
+June was lighter on the surface, the way the sea is lighter on the surface just before a storm. She prayed for him, after her fashion.
+
+@ Wednesday, 11 June 2025
+< 00.56 | ya allah, if saqi smokes more than 7 cigarettes a day, please make him go broke
+
+@ Thursday, 26 June 2025
+< 15.45 | ya allah, if saqi finds a new crush, please make his thing fall off
+
+He found these hilarious. So, it is worth saying, did she. There is a kind of curse that is really a blessing in a bad mood: *don't you dare leave me* phrased as a joke so that nobody has to admit it was a plea.
+
+And then, at the end of the month, he went to Bandung. He told her at the very last minute — a friend was picking him up, it was sudden, sorry — and then, as if it were nothing, as if it were a footnote:
+
+@ Friday, 27 June 2025
+> 16.05 | there's a girl coming too, it's fine right?
+< 16.12 | i've already cried, you bastard
+< 16.12 | don't do that
+< 16.12 | think about people's feelings
+
+Earlier that very day, in the strange, careless way that the worst days hide their warnings, she had asked him a question in passing. A hypothetical. The kind of question you ask when you already suspect the answer.
+
+< 01.57 | if, say, you had a crush on a friend of yours, a girl, would you tell me? me, your girlfriend
+
+He was out drinking. He did not answer it.
+
+## Seven | The KTP | July – August 2025
+
+The archive does not contain the breakup.
+
+That is the first thing you must understand. Somewhere between the tenth of July, when she asked him what day he was going to campus, and the twenty-eighth, when she next wrote, two people who had sent each other seven thousand messages in a single month stopped being a couple — and not one word of it was typed. Perhaps it happened on the phone. Perhaps in person, in a parked car, with the engine running. Perhaps it did not happen at any single moment at all, but slowly, the way a song ends on the radio when you are not paying attention, so that you only notice the silence.
+
+All we have is what came after. And what came after was an identity card.
+
+***
+
+In Indonesia everyone carries a *KTP* — a little plastic rectangle with your face, your name, your address, your religion, your blood type. The state's opinion of who you are. Somehow, in the long months of being together, his had ended up at her house.
+
+@ Monday, 28 July 2025
+< 21.20 | want to come get your ktp?
+> 21.21 | later. tomorrow or whenever
+< 21.22 | then why are you texting
+> 21.27 | it's just an excuse to give back the ktp
+> 21.27 | give it back but in exchange for something
+< 21.44 | i'll just send it by gojek to razan's
+> 21.46 | we'll fight again
+> 21.46 | if i don't report in
+< 21.55 | we already broke up
+> 21.55 | you want to date again?
+< 21.56 | that's what YOU want
+
+There it is, at last, typed out in plain words, almost casually, in the middle of an argument about a courier: *we already broke up.*
+
+He would not come and get it. She kept offering — tonight? tomorrow? when? — and he kept postponing, and the reason, which neither of them wrote down because neither of them needed to, is the oldest reason in the world. As long as she had his KTP, she still had a piece of him. As long as she had a piece of him, there was a reason to text. A man will leave his own name in a girl's drawer for weeks if it means the conversation does not have to end.
+
+*Since we broke up,* he wrote, on the twenty-ninth, *I've been praying more.* It was meant as a joke. It was not entirely one.
+
+***
+
+On the tenth of August, at sixteen minutes to one in the morning, he wrote to her drunk.
+
+@ Sunday, 10 August 2025
+> 00.44 | syajdngg
+> 00.44 | whyy are yoy ljke thiss
+> 00.44 | i stll wnat you co
+> 00.44 | why did you leabe me
+> 00.44 | inessyangg
+> 00.44 | iensa
+> 00.44 | where aree you
+> 00.44 | i knoq i was wrng i was dumb
+> 00.45 | plss i thoughtt we cnould go bakc
+< 00.45 | are you drunk
+< 00.49 | what are you even typing
+
+Then three hours of nothing.
+
+> 03.49 | sorry
+> 03.50 | sorry for bothering you
+
+The next afternoon, she wrote to him — and it is worth noticing that she wrote first, and what she wrote.
+
+< 17.08 | hey
+< 17.08 | did you have an accident?
+
+Not *what was that*. Not *don't text me drunk again*. *Did you have an accident?* She had heard something, or imagined something, and before her pride could stop her she had asked. He answered, as if nothing had happened, *hello darling*. She answered, carefully, *you okay?*
+
+Somewhere in a drawer in her house there was still an identity card with his face on it.
+
+## Eight | P, P, P | September 2025 – April 2026
+
+After a love story ends, there is a long stretch that nobody writes novels about. The archive shows it clearly: whole months reduced to a handful of lines. Ten messages in September. Five in October. Two in November.
+
+They are nearly all his, and nearly all the same.
+
+@ 14 August 2025
+> 02.13 | ppppp
+> 02.13 | nes
+> 02.13 | pppp
+@ 16 August 2025
+> 04.22 | p
+@ 18 August 2025
+> 02.24 | p
+@ 3 September 2025
+> 01.51 | ppppp
+@ 15 September 2025
+> 22.56 | p
+@ 25 September 2025
+> 23.52 | p
+
+Remember the first message? The one from October, the twelve seconds? This is the same letter. It still means *are you there?* It still means *I'm here.* The only thing that has changed is that, now, nobody sends it back.
+
+There is a particular loneliness to typing a single letter into an empty room. It is not even a question you are allowed to be hurt by. *P* asks for nothing. It only waits.
+
+Once, in September, when he had a cold, he wrote *gws* — *get well soon* — and she answered at once, two quick lines about a jacket of hers, as if no time had passed at all. In October he wrote *where are you*, and then, four days later, *don't be naughty*, which is the kind of thing you say to someone you have no right to say it to anymore.
+
+***
+
+And then, on the twelfth of December, at exactly midnight, she sent him a link.
+
+It was a gift — one of those online gift pages that open like a little present on the screen. It arrived at 00:00:42, which means that she had been waiting. Watching the clock. Making sure she would be the first.
+
+He did not see it until almost five in the morning.
+
+@ Friday, 12 December 2025
+> 04.55 | thank youuu i'm so touched
+> 04.55 | huhuhueee
+
+He kept that link. He would send it back to her eleven months later, at 1:41 a.m., right after she exported their story — as if to say, *I remember this too. I was keeping count as well.*
+
+***
+
+The new year came. On the morning of Eid, the day Muslims across the country ask forgiveness from everyone they have wronged, he wrote to her.
+
+@ Saturday, 21 March 2026
+> 06.14 | happy eid nem
+> 06.14 | forgive me if i ever did anything wrong
+> 06.14 | and if you can't forgive me, just let it go. don't make it complicated
+< 07.09 | happy eid, forgive me too, shaquil
+
+He had started calling her *Nem* by then — a nickname that only made sense to the two of them. She used his full name, the way you address a letter to someone you are no longer close to.
+
+In April there was trouble with mutual friends, a message passed along second-hand, and for the first time in the whole archive she wrote something that was unmistakably a door being shut: *get out of my life please*. He answered, *alright then*. Four days later, for reasons the archive keeps to itself, she wrote *thank you*, and he wrote *no problem* — and then, because he could not help it, *where are you?* and *coffee, Nem?*
+
+She said no. He asked again. She said no again. *What is with this kid,* he wrote, fondly, to nobody.
+
+## Nine | One Last Time | June 2026
+
+On the tenth of June, almost a year after the KTP, he asked her whether she still had his hoodie.
+
+It was a stupid question and they both knew it. She answered *disgusting??* and then, before he could even reply, *my shirt and my zip jacket are at yours too — have I ever asked about them???* — which is a very particular way of saying *I also remember exactly which of your things I still own.*
+
+What followed was the most cheerful hour of the entire archive. They insulted each other like old classmates. He called her a celebrity because she replied so slowly. She called him *jamet* — a word for a certain kind of try-hard boy, all cheap cologne and bad music. He sent her an old sticker. *Remember this one?* *SO ANNOYING,* she wrote, and then, a minute later, *nice 👍🏼*. He told her the campus had fallen apart without him. *It's actually improved without you,* she said.
+
+*You're so annoying,* he wrote.
+
+*Where's your girlfriend,* she wrote. *Tell her to keep a better eye on you.*
+
+***
+
+Four days later, at 12:37 in the morning, he sent her a location.
+
+It was near her house. He was sitting there, or driving past, or parked at the corner — the pin does not say. Fourteen minutes later he asked if she would meet him, and when she did not answer at once he did the thing he always did when the feeling was too big: he switched to English.
+
+@ Sunday, 14 June 2026
+> 00.56 | can we meet one last time. i swear i won't bother you again after that. i just want one more memory of you before i let you go
+< 00.56 | why all of a sudden
+> 00.58 | i don't know. the thought of never seeing you again hit me harder than i expected
+> 01.01 | i feel like this world is nothing if you're not around me
+> 01.01 | i really mean it
+< 01.01 | and if we meet, then what
+> 01.03 | i don't know. maybe just chilling, talking about random stuff. i kind of want to waste time with you one last time and that's it
+> 01.04 | and i promise we won't talk about the past
+> 01.09 | i don't have access to you anymore. i can't talk to you, i can't see you. so when i miss you there's not much i can do. the only thing i had left was passing by your place, hoping it would make me feel a little closer to you
+
+Read that last message slowly. A grown man, sitting in the dark near a house, explaining to a girl that this — this pathetic, beautiful habit of driving past her street — was the only thing he had left.
+
+They spoke on the phone. *That call wasn't enough,* he wrote afterwards. *Can't we extend it?* Then, at 1:55 a.m., he pinned one of her messages to the top of the chat, the way you press a flower inside a book.
+
+***
+
+She took four days to answer. When she did, she answered beautifully.
+
+@ Thursday, 18 June 2026
+< 02.45 | yeah. i don't think meeting is the right thing for me
+< 02.47 | our last meeting affected me more than you probably know, and it took me a long time to heal
+< 02.47 | there were a lot of things i had to go through by myself before i could finally find peace again.....
+< 02.51 | if our paths ever cross again someday, i'd rather it happen naturally and unexpectedly. i think i'd like that more than trying to arrange it ourselves.....
+< 02.53 | fyi, this doesn't mean i hate you, and not because i'm still holding a grudge. i just want to protect my peace
+> 03.37 | so this is a closure?
+> 03.38 | because last time you told me we were done
+> 03.39 | i thought it was just a break for us
+< 03.48 | i'm sorry, abang. yes, i think this is my closure. i don't have any hard feelings, but i don't think meeting again is the right thing for me. so if we're ever meant to cross paths again, i'd rather let it happen naturally than plan it. i wish you nothing but the best
+
+*Abang.* After a year of his full name, she called him *abang* again — in the very sentence where she said goodbye.
+
+He asked her if it was really her decision, or something her friends had talked her into after hearing about him. She swore it was her own mind and her own heart. *I know you so well,* he wrote. And then — because he was Saqil, and Saqil had never once in his life known how to end a conversation — at 4:03 a.m.:
+
+> 04.03 | wake me up at 9 tomorrow
+> 04.03 | come watch my thesis defence later nem
+
+Her closure letter was an hour old. He had asked her to be his alarm clock again.
+
+***
+
+The next evening, she was at campus. So, as it happened, was his car.
+
+It was still Ramadan-adjacent weather in their hearts, if not on the calendar — the time just before sunset when everyone is waiting to break their fast. He saw that she was there. He wrote *let's meet*. He wrote *last time, Nes*. He wrote *break your fast with abang*, and *just talk for a bit*, and *please, last time*.
+
+@ Thursday, 18 June 2026
+< 17.36 | what do you even want to say
+< 17.40 | where are you then
+
+*Where are you then.* Not yes. Not okay. Just a question about where to walk.
+
+She had written, only fifteen hours before, that if their paths ever crossed again she would rather it happen naturally and unexpectedly. It is one of the gentler jokes the universe likes to play: that sometimes the most natural, unexpected thing in the world is a boy who will not stop asking.
+
+## Ten | Red Flowers | October 2026
+
+The archive is silent for most of the summer. Whatever happened at that sunset, it was not typed. But in October the messages return — two hundred and forty-five of them — and they return in a new language, a strange hybrid neither of them had used before. Not the language of a couple. Not quite the language of strangers. Something in between, for which there is no good word.
+
+On the twenty-eighth of October it rained, and at 11:35 in the morning he wrote:
+
+@ Wednesday, 28 October 2026
+> 11.35 | rain like this, perfect for coffee, nes
+> 11.35 | somewhere close
+< 13.41 | i'm at campus
+> 13.42 | then go home with me later
+< 14.46 | around 5
+> 15.02 | then i'll leave at half past four
+
+That evening, at 11:16, he sent her a message in quotation marks — as if quoting something somebody had said to him, a long time ago:
+
+> 23.16 | "let me know when you get home ya"
+< 23.19 | thank you so much for tonight, more accurately
+> 23.20 | it's okay. happy to see you
+
+It was her birthday that week. Another boy — a friend of hers, a long-time friend — gave her flowers.
+
+***
+
+What follows is the most quarrelsome stretch of the late archive, and also the most alive. He was jealous and pretended he wasn't. She was pleased that he was jealous and pretended she wasn't. He found the photographs of the flowers. He asked about the boy. She called him a monkey. He told her that no boy gives a girl flowers unless he has caught feelings, *especially on her birthday*. She told him the boy gave flowers to all his friends. *But not like mine,* she added, and then seemed to regret it.
+
+And somewhere in the middle of all this, as casually as a stone dropped into a well:
+
+@ Friday, 30 October 2026
+< 16.27 | what kind of relationship even is this
+> 16.27 | are you comfortable with this relation?
+> 16.28 | let your heart be the answer
+< 16.28 | you said i was the person you vent to
+< 16.30 | comfortable when we talk, yeah
+< 16.30 | me being me, not anyone else
+< 16.30 | same, honestly. with you i just get to be myself
+< 16.31 | NO FEELINGS INVOLVED OKAY
+> 16.32 | what kind of enemies kiss, though
+< 16.33 | hey we only met once after all that shit. i don't know how my heart feels, dude
+< 16.33 | shut up. YOU kissed ME first??
+> 16.34 | it felt kind of better than before, didn't it?
+< 16.34 | i just got carried away and went along with it
+
+Then he wrote the line that, of all the lines in this story, is perhaps the most like him — clever and unfair and true at the same time:
+
+> 16.36 | your intentions, your mind and your heart are three different things, nes
+> 16.36 | and i'm pretty sure i know what your heart wants
+
+A few minutes later she mentioned that someone at home would be tidying her room. He gave instructions, like a man arranging his own future from the other side of the city.
+
+> 16.42 | tidy the room up properly
+> 16.42 | but don't throw out the red flowers
+> 16.43 | the other ones, you can throw away
+
+He had given her red flowers too. That is what the message means. Two bouquets on a girl's desk on her birthday, and a boy across town who cared, more than he would ever admit, which one survived the cleaning.
+
+*Ridiculous,* she wrote. *I hate it.* And then, after a pause, *maybe you're destined to be lonely.* She did not throw out the red flowers. Nobody ever does.
+
+## Eleven | Wake Me Up at Nine | November 2026
+
+By November it had become something neither of them would name. He was a working man now — he had a job he sometimes skipped, a future he described with mock grandeur as *billionaire-to-be*. She was still a student, drowning, she said, in six assignments at once.
+
+He offered to help. She told him he would only use AI.
+
+@ Sunday, 1 November 2026
+> 17.21 | want me to help?
+> 17.25 | and don't keep using ai, dummy
+< 17.26 | i have 6 assignments
+> 17.26 | i'll do it, no ai
+< 17.28 | 😭😭 you said no ai you jerk
+> 17.28 | claude isn't ai
+
+A year and a half earlier, she had sent him an essay about the ancient Javanese art of deciding whether two people belong together. Now he was doing her homework at five in the afternoon, badly, with help he insisted did not count. There is a symmetry in it that only the archive can see. People do not stop caring about each other just because they have stopped calling it love. Sometimes they simply change the name of the thing they are doing.
+
+That night, at 11:50, he wrote to her in the old way — in English, because it was too big for the other language:
+
+> 23.50 | can you be my ears for a sec
+> 23.50 | just finish your homework
+> 23.50 | we can talk later
+
+And at four in the morning, as if the last two years had been one long night that had never really ended:
+
+@ Monday, 2 November 2026
+> 04.56 | wake me up at 9 yaa
+< 04.56 | i haven't even slept yet
+
+It was the same request. The same hour. The same boy, the same girl, two Novembers after the first time he had handed her his mornings. Four days later he overslept, skipped work, and complained that she had failed in her one duty — waking him up. *The only duty is prayer,* she told him, primly. He told her she didn't pray either. She called him ugly. He asked what they were even talking about.
+
+Nobody knew. That was the point. That was always the point.
+
+***
+
+And so we come back to where we began.
+
+At 1:31 in the morning on the eleventh of November, he sent her a single letter. Then another. Then *please*. She answered *what is it*, and he asked her to do something strange — to open his contact, scroll to the very bottom, find the words *export chat*, and press the one *with media*.
+
+@ Wednesday, 11 November 2026
+< 01.33 | why though
+< 01.33 | what's it for
+> 01.33 | just do it nes
+> 01.34 | i'm doing something special right now
+< 01.36 | the very bottom, is that report?
+> 01.37 | export
+< 01.37 | ohh wait
+> 01.38 | with media ok
+
+At 1:39 the file arrived. At 1:41 he sent her back the little gift link she had given him at midnight on his birthday, eleven months earlier — the one she had stayed up for. And at 1:41 and fifty-six seconds she sent him a voice note.
+
+The archive does not say what was in it. Voice notes do not export as words. They export only as a filename, a length, a little grey file that you have to press to hear — and this story, the one you are holding, was written by somebody who could not press it.
+
+So we will leave it there. Unplayed.
+
+***
+
+There is a thing that happens at the end of most novels, where the author tells you what became of everyone. Whether they married. Whether they moved away. Whether, in the last chapter, standing in the rain, one of them finally said the thing.
+
+This story cannot do that, because this story is not over. It was exported in the middle. It stops not at an ending but at a voice note, and a boy at his desk at two in the morning, and a girl somewhere across the city who had just sent him the whole of their history because he asked her to, without — in the end — needing to know why.
+
+Perhaps that is enough. Perhaps, of all the things one person can give another, that is one of the rarest: not a promise about the future, but a perfect copy of the past. *Here. All of it. Every sticker, every fight, every deleted message, every time I said I hated you and every time I said I didn't. Do with it what you like.*
+
+What he did with it, reader, is this.
+
+~ p.
+
+## Epilogue | A Note on the Archive |
+
+Twenty-eight thousand and ten lines.
+
+Two years and twenty-four days, from the eighteenth of October, 2024, to the eleventh of November, 2026.
+
+Seven thousand, one hundred and seventy messages in the month of March 2025 alone, when they rode through the blue dark before sahur and bought food on the way home.
+
+Two messages in November 2025, when one of them had stopped answering.
+
+One identity card, eventually returned.
+
+One hoodie, one shirt, one zip jacket, never returned at all.
+
+Two bouquets on a birthday. One of them red. One of them kept.
+
+Countless messages that read, simply, *this message was deleted* — each one a small, invisible kindness or cowardice, each one a sentence someone was brave enough to write and not quite brave enough to send. If you could read them all, you would probably learn nothing new. They were almost certainly the same things everybody else says, in the end. *I miss you. I'm sorry. Come back. Don't.*
+
+And one letter, sent more times than anyone could count, which in the language they spoke means nothing at all, and which in theirs meant: *Are you there? I'm here.*
+
+~ For Ines — who answered, more often than not.
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+<script>
+(function(){
+"use strict";
+const BOOK_TITLE = "Last Seen at 1 A.M.";
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const inline = s => esc(s).replace(/\*([^*]+)\*/g,"<em>$1</em>");
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+};
+
+/* ---------- parse manuscript ---------- */
+function parse(){
+  const raw = $("#manuscript").textContent.replace(/\r/g,"");
+  const chapters = [];
+  let ch = null, para = [];
+  const flush = () => { if(para.length && ch){ ch.blocks.push({t:"p", text:para.join(" ")}); } para = []; };
+  for(const lineRaw of raw.split("\n")){
+    const line = lineRaw.trim();
+    if(line.startsWith("## ")){
+      flush();
+      const [num,title,when] = line.slice(3).split("|").map(x=>x.trim());
+      ch = {num,title,when:when||"",blocks:[]}; chapters.push(ch); continue;
+    }
+    if(!ch) continue;
+    if(line===""){ flush(); continue; }
+    let m;
+    if(line==="***"){ flush(); ch.blocks.push({t:"brk"}); continue; }
+    if(line.startsWith("@ ")){ flush(); ch.blocks.push({t:"day", text:line.slice(2)}); continue; }
+    if(line.startsWith("~ ")){ flush(); ch.blocks.push({t:"c", text:line.slice(2)}); continue; }
+    if((m = line.match(/^([<>])(x?)\s*([\d.]+)\s*\|\s*(.*)$/))){
+      flush(); ch.blocks.push({t:"msg", who:m[1]==="<"?"i":"s", del:!!m[2], time:m[3], text:m[4]}); continue;
+    }
+    para.push(line);
+  }
+  flush();
+  // mark first paragraph in each chapter + after breaks; mark message runs
+  for(const c of chapters){
+    let needFirst = true;
+    c.blocks.forEach((b,i)=>{
+      if(b.t==="p"){ b.first = needFirst && i===0 ? true : false; b.noind = needFirst && !b.first; needFirst=false; }
+      else if(b.t==="brk"){ needFirst = true; }
+      else if(b.t==="msg" || b.t==="day"){ needFirst = true; }
+      if(b.t==="msg"){
+        const prev = c.blocks[i-1], next = c.blocks[i+1];
+        b.showWho = !(prev && prev.t==="msg" && prev.who===b.who);
+        b.lastOfRun = !(next && next.t==="msg");
+      }
+    });
+  }
+  return chapters;
+}
+
+function blockHTML(b, words){
+  switch(b.t){
+    case "p": {
+      const txt = words ? words : b.text;
+      const cls = b._cont ? "cont" : (b.first ? "first" : (b.noind ? "noind" : ""));
+      return `<p class="${cls}">${inline(txt)}</p>`;
+    }
+    case "brk": return `<div class="brk">✦ ✦ ✦</div>`;
+    case "c": return `<p class="c">${inline(b.text)}</p>`;
+    case "day": return `<div class="day">${esc(b.text)}</div>`;
+    case "msg": {
+      const who = b.showWho ? `<span class="who">${b.who==="i"?"mermaid":"saqil"}</span>` : "";
+      const body = b.del ? `<span class="b del">this message was deleted<span class="t">${esc(b.time)}</span></span>`
+        : `<span class="b">${who}${inline(b.text)}<span class="t">${esc(b.time)}</span></span>`;
+      return `<div class="msg ${b.who}">${body}</div>${b.lastOfRun?'<div class="msgend"></div>':''}`;
+    }
+  }
+  return "";
+}
+
+/* ---------- geometry ---------- */
+function geometry(){
+  const vw = window.innerWidth, vh = window.innerHeight - 56 - 24;
+  const spread = vw >= 900 && vw/vh > 1.05;
+  let pw, ph;
+  if(spread){
+    ph = Math.min(vh - 20, 860);
+    pw = Math.round(ph / 1.42);
+    if(pw*2 > vw - 60){ pw = Math.floor((vw-60)/2); ph = Math.round(pw*1.42); }
+  } else {
+    pw = Math.min(vw - 32, 560);
+    ph = Math.min(vh - 10, Math.round(pw*1.75));
+    if(ph < pw*1.25) { ph = Math.round(pw*1.25); }
+  }
+  ph = Math.max(ph, 360);
+  const fs = Math.max(14, Math.min(19.5, pw*0.0335));
+  const px = Math.round(pw*0.105), pt = Math.round(ph*0.085), pb = Math.round(ph*0.085);
+  return {spread, pw, ph, fs, px, pt, pb};
+}
+
+function shell(g, cls, running, folio, inner){
+  // StPageFlip rewrites the .page element's inline style, so sizing + vars live on an inner wrapper
+  return `<div class="page ${cls}" style="width:${g.pw}px;height:${g.ph}px"><div class="pbox" style="position:relative;width:${g.pw}px;height:${g.ph}px;--fs:${g.fs}px;--px:${g.px}px;--pt:${g.pt}px;--pb:${g.pb}px;font-size:${g.fs}px">
+    <div class="pinner">${running!=null?`<div class="running">${esc(running)}</div>`:""}${inner}</div>
+    ${folio!=null?`<div class="folio">${folio}</div>`:""}
+  </div></div>`;
+}
+
+/* ---------- pagination ---------- */
+function paginate(chapters, g){
+  const meas = $("#measure");
+  meas.innerHTML = shell(g,"paper","x","1",`<div class="content"></div>`);
+  const box = meas.querySelector(".content");
+  const fits = () => box.scrollHeight <= box.clientHeight + 1;
+  const pages = [];   // {html, chapter}
+  const chapStart = [];
+
+  chapters.forEach((c, ci)=>{
+    const head = `<div class="chap-head"><div class="num">${c.num==="Prologue"||c.num==="Epilogue"?esc(c.num):"Chapter "+esc(c.num)}</div><div class="ttl">${esc(c.title)}</div>${c.when?`<div class="when">${esc(c.when)}</div>`:""}<span class="orn"></span></div>`;
+    let cur = head, isFirstPage = true;
+    chapStart.push(pages.length);
+    const commit = () => { pages.push({html:cur, ch:c, first:isFirstPage}); cur=""; isFirstPage=false; };
+    const queue = c.blocks.map(b=>Object.assign({},b));
+    while(queue.length){
+      const b = queue.shift();
+      const h = blockHTML(b);
+      box.innerHTML = cur + h;
+      if(fits()){ cur += h; continue; }
+      if(b.t==="p"){
+        const words = b.text.split(" ");
+        let lo=0, hi=words.length;
+        while(lo<hi){ const mid=Math.ceil((lo+hi)/2); box.innerHTML = cur + blockHTML(b, words.slice(0,mid).join(" ")); if(fits()) lo=mid; else hi=mid-1; }
+        if(lo >= 4 || (lo>0 && cur==="")){
+          // avoid leaving a single line widow at the bottom: require at least ~4 words
+          cur += blockHTML(b, words.slice(0,lo).join(" "));
+          commit();
+          queue.unshift(Object.assign({}, b, {text:words.slice(lo).join(" "), _cont:true, first:false}));
+        } else {
+          if(cur==="" ){ cur += h; commit(); } // pathological: force
+          else { commit(); queue.unshift(b); }
+        }
+      } else {
+        // keep a date chip with the message that follows it
+        if(cur===""){ cur += h; commit(); continue; }
+        if(b.t!=="day"){
+          const prevDay = cur.lastIndexOf('<div class="day">');
+          if(prevDay>=0 && cur.slice(prevDay).indexOf('<div class="msg')===-1){
+            const dayHtml = cur.slice(prevDay); cur = cur.slice(0,prevDay); commit(); cur = dayHtml; queue.unshift(b); continue;
+          }
+        }
+        commit(); queue.unshift(b);
+      }
+    }
+    if(cur.trim()!=="") commit();
+  });
+  meas.innerHTML = "";
+  return {pages, chapStart};
+}
+
+/* ---------- build book ---------- */
+let pf = null, total = 0, tocTargets = [], frontCount = 0, built = null;
+
+function build(){
+  const g = geometry();
+  const chapters = window.__chapters || (window.__chapters = parse());
+  const {pages, chapStart} = paginate(chapters, g);
+
+  const out = [];
+  // cover
+  out.push(shell(g,"cover",null,null,`<div class="frame"></div><div class="moon"></div><div class="kicker">A Novel</div><h1>Last Seen<em>AT 1 A.M.</em></h1><div class="sub">twenty-eight thousand messages, two years, and a single letter</div><div class="auth">Saqil &amp; Ines</div>`));
+  // inside cover
+  out.push(shell(g,"paper blankpage center-page",null,null,`<div style="letter-spacing:.6em">✦</div>`));
+  // title page
+  out.push(shell(g,"paper center-page titlepage",null,null,`<div><h2>Last Seen<br>at 1 A.M.</h2><div class="by">a novel, told from a WhatsApp archive</div></div><div class="pub">October 2024 — November 2026</div>`));
+  // epigraph
+  out.push(shell(g,"paper center-page",null,null,`<div class="epi">“Some people say <em>I love you</em> with flowers.<br>Some say it with poems.<br>He said it with a list of times<br>he wanted to be woken up.”<span class="src">— Chapter One</span></div>`));
+  // contents (filled after we know numbers)
+  const tocIndex = out.length;
+  out.push("");
+  out.push(shell(g,"paper blankpage center-page",null,null,`<div style="font-family:var(--display);font-style:italic;color:var(--ink-soft)">for the hours between one and four</div>`));
+  frontCount = out.length;
+
+  pages.forEach((p, i)=>{
+    const n = i+1;
+    const run = p.first ? null : ((frontCount + i) % 2 === 1 ? BOOK_TITLE : p.ch.title);
+    out.push(shell(g,"paper",run,p.first?null:String(n),`<div class="content">${p.html}</div>`));
+  });
+
+  tocTargets = chapStart.map(s => frontCount + s);
+  const tocHTML = `<div class="toc"><h3>Contents</h3>${chapters.map((c,i)=>`<a data-go="${tocTargets[i]}"><span class="nn">${/^\d|^[A-Z][a-z]+$/.test(c.num)&&c.num!=="Prologue"&&c.num!=="Epilogue"?romanize(i):""}</span><span class="tt">${esc(c.title)}</span><span class="dots"></span><span class="pg">${chapStart[i]+1}</span></a>`).join("")}</div>`;
+  out[tocIndex] = shell(g,"paper",null,null,tocHTML);
+  $("#tocbox").innerHTML = tocHTML.replace("<h3>Contents</h3>","<h3 style='margin-top:0'>Contents</h3>");
+
+  // back matter: ensure even count so back cover lands right
+  if((out.length+1) % 2 === 1) out.push(shell(g,"paper blankpage center-page",null,null,`<div style="letter-spacing:.6em">✦</div>`));
+  out.push(shell(g,"cover back",null,null,`<div class="frame"></div><div><p>“It is possible to be someone's entire screen and still not be in the room with them.”</p><div class="orn2">✦</div><p style="font-size:.85em">A story reconstructed from 28,010 lines of a WhatsApp chat — every message translated, every silence kept.</p></div>`));
+
+  total = out.length;
+  return {g, out};
+}
+
+function romanize(i){ return ["","I","II","III","IV","V","VI","VII","VIII","IX","X","XI","XII","XIII"][i]||""; }
+
+let fallbackIdx = 0;
+function mount(startFrac){
+  const {g, out} = build();
+  const wrap = $("#bookwrap");
+  if(pf){ try{ pf.destroy(); }catch(e){} pf = null; }
+  wrap.innerHTML = "";
+  const host = document.createElement("div");
+  wrap.appendChild(host);
+  host.innerHTML = out.join("");
+  const startPage = Math.max(0, Math.min(total-1, Math.round((startFrac||0)*(total-1))));
+
+  if(window.St && St.PageFlip){
+    host.querySelectorAll(".page").forEach((p,i)=>{ if(i===0||i===total-1) p.setAttribute("data-density","hard"); });
+    pf = new St.PageFlip(host, {
+      width:g.pw, height:g.ph, size:"fixed", showCover:true, usePortrait:!g.spread,
+      maxShadowOpacity:.45, flippingTime:850, mobileScrollSupport:false, drawShadow:true, startPage
+    });
+    pf.loadFromHTML(host.querySelectorAll(".page"));
+    pf.on("flip", e => onPage(e.data));
+    onPage(pf.getCurrentPageIndex());
+  } else {
+    // simple fallback viewer
+    host.id = "fallback";
+    const pages = [...host.querySelectorAll(".page")];
+    fallbackIdx = startPage;
+    const step = g.spread ? 2 : 1;
+    const show = () => {
+      pages.forEach((p,i)=>{
+        let vis;
+        if(!g.spread) vis = i===fallbackIdx;
+        else if(fallbackIdx===0) vis = i===0;
+        else { const left = fallbackIdx % 2 === 1 ? fallbackIdx : fallbackIdx-1; vis = i===left || i===left+1; }
+        p.style.display = vis ? "" : "none";
+      });
+      onPage(fallbackIdx);
+    };
+    window.__fb = { next(){ fallbackIdx = Math.min(total-1, fallbackIdx===0?1:fallbackIdx+step); show(); }, prev(){ fallbackIdx = Math.max(0, fallbackIdx-step); show(); }, go(n){ fallbackIdx=n; show(); } };
+    host.addEventListener("click", e => { const r = host.getBoundingClientRect(); (e.clientX - r.left) > r.width/2 ? window.__fb.next() : window.__fb.prev(); });
+    show();
+  }
+}
+
+function onPage(i){
+  const label = i < frontCount ? (i===0 ? "Cover" : "—") : (i>=total-1 ? "The End" : `${i-frontCount+1}`);
+  $("#pinfo").textContent = label === "—" ? "Front matter" : (label==="Cover"||label==="The End" ? label : `Page ${label} of ${total-frontCount-1}`);
+  $("#prog").style.width = (100 * i/(total-1)) + "%";
+  store.set("lastseen-page-frac", String(i/(total-1)));
+}
+
+const next = () => pf ? pf.flipNext() : window.__fb && window.__fb.next();
+const prev = () => pf ? pf.flipPrev() : window.__fb && window.__fb.prev();
+const go = n => { if(pf){ pf.turnToPage(n); onPage(n); } else if(window.__fb){ window.__fb.go(n); } };
+
+$("#bNext").onclick = next; $("#bPrev").onclick = prev;
+$("#bToc").onclick = () => $("#tocpanel").classList.add("on");
+$("#tocpanel").addEventListener("click", e => {
+  const a = e.target.closest("a[data-go]");
+  if(a){ go(+a.dataset.go); }
+  $("#tocpanel").classList.remove("on");
+});
+document.addEventListener("click", e => { const a = e.target.closest(".page a[data-go]"); if(a){ e.stopPropagation(); go(+a.dataset.go); } }, true);
+document.addEventListener("keydown", e => {
+  if(e.key==="ArrowRight"||e.key==="PageDown"||e.key===" "){ e.preventDefault(); next(); }
+  else if(e.key==="ArrowLeft"||e.key==="PageUp"){ e.preventDefault(); prev(); }
+  else if(e.key==="Escape"){ $("#tocpanel").classList.remove("on"); }
+});
+
+let lastG = null, rT = null;
+window.addEventListener("resize", () => {
+  clearTimeout(rT);
+  rT = setTimeout(() => {
+    const g = geometry();
+    if(lastG && Math.abs(g.pw-lastG.pw) < 8 && Math.abs(g.ph-lastG.ph) < 8 && g.spread===lastG.spread) return;
+    const cur = pf ? pf.getCurrentPageIndex() : fallbackIdx;
+    mount(cur/(total-1)); lastG = g;
+  }, 250);
+});
+
+const start = () => {
+  const saved = parseFloat(store.get("lastseen-page-frac") || "0") || 0;
+  mount(saved); lastG = geometry();
+  const L = $("#loading"); L.style.opacity = 0; setTimeout(()=>L.remove(), 650);
+  setTimeout(()=>{ const h=$("#hint"); if(h) h.style.opacity=0; }, 4500);
+};
+// fonts are only fetched when used, so request every face explicitly before measuring pages
+const fontsReady = (document.fonts && document.fonts.load) ? Promise.all([
+  '400 16px "EB Garamond"','italic 400 16px "EB Garamond"','500 16px "EB Garamond"',
+  '400 16px "Cormorant Garamond"','500 16px "Cormorant Garamond"','italic 400 16px "Cormorant Garamond"'
+].map(f=>document.fonts.load(f).catch(()=>null))).then(()=>document.fonts.ready) : Promise.resolve();
+Promise.race([fontsReady, new Promise(r=>setTimeout(r,2500))]).then(start);
+})();
+</script>
+</body>
+</html>
