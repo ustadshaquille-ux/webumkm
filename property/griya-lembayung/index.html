@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Griya Lembayung · Pilih rumah langsung di maketnya (demo)</title>
+<meta name="description" content="Demo website perumahan: pilih kavling di maket 3D, masuk ke dalam rumahnya, lihat tiap ruangan, lalu hitung cicilan. Proyek contoh, bukan perumahan nyata.">
+<meta name="theme-color" content="#ECEEE9">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Griya Lembayung · Pilih rumah langsung di maketnya">
+<meta property="og:description" content="Demo siteplan 3D interaktif untuk developer perumahan.">
+<meta property="og:image" content="https://webumkm.my.id/property/griya-lembayung/og.jpg">
+<meta property="og:locale" content="id_ID">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23131B2C'/%3E%3Cpath d='M7 17 16 9l9 8v7H7z' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css?v=1">
+<link rel="modulepreload" href="vendor/three.module.min.js">
+</head>
+<body>
+<a class="lewati" href="#tipe">Lewati ke konten</a>
+
+<header class="kepala" id="kepala">
+  <a class="merek" href="#atas" aria-label="Griya Lembayung, ke awal">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 17 16 7l11 10v9H5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M13 26v-6h6v6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <span>Griya Lembayung</span>
+  </a>
+  <nav class="menu" aria-label="Menu utama">
+    <a href="#tipe">Tipe rumah</a>
+    <a href="#unit">Daftar unit</a>
+    <a href="#kpr">Simulasi KPR</a>
+  </nav>
+  <a class="tombol tombol-isi kepala-wa" data-wa="survei" href="#" target="_blank" rel="noopener">Jadwalkan survei</a>
+</header>
+
+<main>
+<section class="panggung" id="atas" aria-label="Maket perumahan interaktif">
+  <div class="lekat" id="lekat">
+    <canvas id="maket" aria-hidden="true"></canvas>
+    <svg class="garis" id="garis" aria-hidden="true"><line id="garis-l" x1="0" y1="0" x2="0" y2="0"/><circle id="garis-t" r="4"/></svg>
+
+    <div class="lapis lapis-awal" id="lapis-awal">
+      <div class="hero-teks">
+        <p class="demo-cap">Proyek contoh</p>
+        <h1 aria-label="Pilih rumahmu langsung di maketnya."><span class="baris"><span>Pilih rumahmu langsung</span></span><span class="baris"><span>di maketnya.</span></span></h1>
+        <p class="hero-sub"><span class="hanya-pc">Arahkan kursor ke kavling, lalu klik untuk masuk ke dalam rumahnya.</span><span class="hanya-hp">Ketuk kavling, lalu geser ke bawah untuk masuk ke rumahnya.</span></p>
+        <dl class="angka">
+          <div><dt>Unit tersedia</dt><dd id="st-tersedia">–</dd></div>
+          <div><dt>Harga mulai</dt><dd id="st-harga">–</dd></div>
+          <div><dt>Bangunan / tanah</dt><dd>45 / 91 m²</dd></div>
+        </dl>
+      </div>
+
+      <aside class="panel" id="panel" aria-live="polite">
+        <div class="panel-atas">
+          <p class="panel-no" id="p-no">A-03</p>
+          <p class="status" id="p-status" data-s="tersedia">Tersedia</p>
+        </div>
+        <p class="panel-tipe" id="p-tipe">Tipe 45/91</p>
+        <dl class="panel-data">
+          <div><dt>Luas tanah</dt><dd id="p-lt">91 m²</dd></div>
+          <div><dt>Luas bangunan</dt><dd id="p-lb">45 m²</dd></div>
+          <div><dt>Kamar</dt><dd>2 tidur, 1 mandi</dd></div>
+          <div><dt>Menghadap</dt><dd id="p-hadap">Utara</dd></div>
+        </dl>
+        <p class="panel-harga"><span>Harga</span><b id="p-harga">Rp 685 juta</b></p>
+        <button class="tombol tombol-isi" id="p-masuk" type="button">Masuk ke rumah ini</button>
+        <a class="tautan" id="p-wa" data-wa="unit" href="#" target="_blank" rel="noopener">Tanya unit ini lewat WhatsApp</a>
+      </aside>
+
+      <ul class="legenda" aria-label="Keterangan warna">
+        <li data-s="tersedia">Tersedia</li><li data-s="dipesan">Dipesan</li><li data-s="terjual">Terjual</li>
+      </ul>
+      <p class="gulir" aria-hidden="true"><i></i>Gulir untuk masuk</p>
+    </div>
+
+    <div class="lapis lapis-tur" id="lapis-tur" aria-hidden="true">
+      <button class="kembali" id="kembali" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="k-no">A-03</span> · siteplan</button>
+      <article class="kartu" id="kartu">
+        <p class="kartu-ruang" id="k-ruang"></p>
+        <h2 id="k-judul"></h2>
+        <dl id="k-spek"></dl>
+        <div class="kartu-aksi" id="k-aksi" hidden>
+          <a class="tombol tombol-terang" data-wa="unit" href="#" target="_blank" rel="noopener">Jadwalkan survei</a>
+          <a class="tautan tautan-terang" href="#kpr">Hitung cicilannya</a>
+        </div>
+      </article>
+      <ol class="rel" id="rel" aria-hidden="true"></ol>
+    </div>
+    <p class="tanpa-gl-pesan">Maket 3D tidak bisa tampil di perangkat ini. Pilih unit dari <a href="#unit">daftar unit</a> di bawah.</p>
+  </div>
+</section>
+
+<section class="seksi" id="tipe">
+  <div class="bungkus tipe-grid">
+    <div class="tipe-teks">
+      <h2>Satu denah yang sudah teruji, dua ukuran tanah.</h2>
+      <p class="lead">Semua rumah memakai denah 45 m² yang sama. Bedanya ada di tanah: kavling biasa 7 × 13 m, kavling hook 9 × 13 m dengan taman samping.</p>
+      <table class="tabel">
+        <thead><tr><th scope="col">Tipe</th><th scope="col">Tanah</th><th scope="col">Bangunan</th><th scope="col">Harga mulai</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">45/91</th><td>91 m²</td><td>45 m²</td><td>Rp 685 juta</td></tr>
+          <tr><th scope="row">45/117 hook</th><td>117 m²</td><td>45 m²</td><td>Rp 815 juta</td></tr>
+        </tbody>
+      </table>
+      <ul class="poin">
+        <li>2 kamar tidur, 1 kamar mandi, carport 1 mobil</li>
+        <li>Sertifikat SHM, PBG per unit</li>
+        <li>Listrik 2.200 VA, air PDAM</li>
+      </ul>
+    </div>
+    <figure class="denah">
+      <div id="denah"></div>
+      <figcaption>Denah tipe 45. Ukuran dalam meter.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="seksi seksi-putih" id="unit">
+  <div class="bungkus">
+    <div class="unit-kepala">
+      <h2>Semua unit, terbarui tiap ada transaksi.</h2>
+      <p class="lead">Ketuk nomor untuk melihat rumahnya di maket.</p>
+    </div>
+    <div class="blok-daftar" id="blok-daftar"></div>
+  </div>
+</section>
+
+<section class="seksi" id="kpr">
+  <div class="bungkus kpr-grid">
+    <div>
+      <h2>Kira-kira berapa cicilannya?</h2>
+      <p class="lead">Geser angkanya. Hitungan memakai bunga tetap sepanjang tenor, jadi anggap ini perkiraan awal, bukan penawaran bank.</p>
+      <form class="kpr-form" id="kpr-form" onsubmit="return false">
+        <label>Unit<select id="kpr-unit"></select></label>
+        <label>Uang muka <output id="o-dp">20%</output><input type="range" id="kpr-dp" min="5" max="50" step="5" value="20"></label>
+        <label>Tenor <output id="o-tenor">15 tahun</output><input type="range" id="kpr-tenor" min="5" max="25" step="1" value="15"></label>
+        <label>Bunga per tahun <output id="o-bunga">7,5%</output><input type="range" id="kpr-bunga" min="3" max="13" step="0.25" value="7.5"></label>
+      </form>
+    </div>
+    <div class="kpr-hasil" aria-live="polite">
+      <p class="kpr-label">Cicilan per bulan</p>
+      <p class="kpr-angka" id="kpr-cicilan">–</p>
+      <dl>
+        <div><dt>Harga unit</dt><dd id="kpr-harga">–</dd></div>
+        <div><dt>Uang muka</dt><dd id="kpr-um">–</dd></div>
+        <div><dt>Pinjaman</dt><dd id="kpr-pokok">–</dd></div>
+      </dl>
+      <a class="tombol tombol-isi" data-wa="kpr" href="#" target="_blank" rel="noopener">Kirim hitungan ini ke sales</a>
+    </div>
+  </div>
+</section>
+
+<section class="pitch">
+  <div class="bungkus pitch-isi">
+    <div>
+      <p class="demo-cap demo-cap-terang">Untuk developer &amp; tim sales</p>
+      <h2>Ini demo. Maket seperti ini bisa dibuat untuk proyek Anda.</h2>
+      <p>Siteplan, status unit, dan harga diambil dari satu daftar yang bisa Anda ubah sendiri. Sales cukup kirim satu link, calon pembeli bisa melihat rumahnya tanpa datang ke lokasi.</p>
+    </div>
+    <a class="tombol tombol-terang" data-wa="pitch" href="#" target="_blank" rel="noopener">Bicarakan proyek Anda</a>
+  </div>
+</section>
+</main>
+
+<footer class="kaki">
+  <div class="bungkus kaki-isi">
+    <p>Griya Lembayung adalah proyek contoh. Nama, harga, dan ketersediaan unit bukan data nyata.</p>
+    <p>Website oleh <a href="https://webumkm.my.id" rel="noopener">Baqil</a></p>
+  </div>
+</footer>
+
+<script type="module" src="app.js?v=1"></script>
+</body>
+</html>
