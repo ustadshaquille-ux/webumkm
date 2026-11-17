@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id" data-tema="klinik">
+<html lang="id" data-tema="klinik" data-model="melayang">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -13,7 +13,7 @@
 <script>document.documentElement.classList.add("js");if(matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("reduce");</script>
 <noscript><style>.js .anim-hide{visibility:visible!important}</style></noscript>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300..500&family=Figtree:wght@300..600&display=swap">
-<link rel="preload" href="img/hero.webp" as="image" fetchpriority="high">
+<link rel="preload" href="img/f5.webp" as="image" fetchpriority="high">
 <link rel="stylesheet" href="../../aset-mewah/lenis.css">
 <link rel="stylesheet" href="../../aset-mewah/mewah.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Apotik Gading Bersama", "telephone": "+628118905829", "address": {"@type": "PostalAddress", "streetAddress": "Ruko Paramount Center, Gading Serpong, Jl. Cibogo Wetan Blok A No.01, Klp. Dua, Kecamatan Kelapa Dua, Kabupaten Tangerang, Banten 15810", "addressLocality": "Gading Serpong", "addressCountry": "ID"}}</script>
@@ -40,24 +40,19 @@
 
 <main id="isi">
 
-<section class="hero" id="top">
-  <div class="hero__media" id="heroMedia">
-    <img class="hero__img" id="heroImg" src="img/hero.webp" width="1080" height="1440" fetchpriority="high" alt="Foto Apotik Gading Bersama">
-    <canvas class="hero__gl" id="heroGl" aria-hidden="true"></canvas>
-  </div>
-  <div class="hero__shade"></div>
-  <p class="hero__hint" id="heroHint" aria-hidden="true"><i></i><span class="t-mouse">Gerakkan kursor di atas gambar</span><span class="t-touch">Sentuh layar</span></p>
-  <div class="hero__body container">
-    <h1 class="anim-hide s1" id="heroH1">Pemeriksaan yang tertib, penanganan yang tenang.</h1>
-    <div class="hero__foot">
-      <div>
-        <p class="hero__id anim-hide"><strong>Apotik Gading Bersama</strong><span>Apotek, Gading Serpong</span></p>
-        <p class="hero__sub anim-hide">Apotik Gading Bersama melayani pemeriksaan dan konsultasi kesehatan di Gading Serpong. Atur jadwal kunjungan melalui WhatsApp.</p>
-      </div>
-      <div class="hero__cta anim-hide">
-        <a class="btn btn--solid" href="https://wa.me/628118905829?text=Selamat%20siang%2C%20saya%20ingin%20membuat%20janji%20kunjungan%20di%20Apotik%20Gading%20Bersama." target="_blank" rel="noopener" data-magnet>Buat janji melalui WhatsApp</a>
-        <a class="btn btn--link" href="#layanan">Lihat layanan</a>
-      </div>
+<section class="h h--melayang" id="top">
+  <div class="container">
+    <div class="h__atas">
+      <p class="h__id anim-hide" data-masuk><strong>Apotik Gading Bersama</strong><span>Apotek, Gading Serpong</span></p>
+      <h1 class="anim-hide s1" id="heroH1">Pemeriksaan yang tertib, penanganan yang tenang.</h1>
+      <p class="h__sub anim-hide" data-masuk>Apotik Gading Bersama melayani pemeriksaan dan konsultasi kesehatan di Gading Serpong. Atur jadwal kunjungan melalui WhatsApp.</p>
+      <div class="h__cta anim-hide" data-masuk><a class="btn btn--solid" href="https://wa.me/628118905829?text=Selamat%20siang%2C%20saya%20ingin%20membuat%20janji%20kunjungan%20di%20Apotik%20Gading%20Bersama." target="_blank" rel="noopener" data-magnet>Buat janji melalui WhatsApp</a><a class="btn btn--link" href="#layanan">Lihat layanan</a></div>
+    </div>
+    <div class="h__panggung anim-hide" data-masuk style="--r:1.478">
+      <figure class="ft ft--lebar" style="--r:1.478"><img src="img/f5.webp" width="1400" height="947" fetchpriority="high" alt="Foto Apotik Gading Bersama"></figure>
+      <div class="h__apung h__apung--kiri"><div class="fk fk--lokasi"><p class="fk__l">Lokasi</p><p class="fk__n fk__n--kecil">Gading Serpong</p></div></div>
+      <div class="h__apung h__apung--kanan"><div class="fk fk--jam"><p class="fk__l">Jam buka hari ini</p><p class="fk__n fk__n--kecil" data-jam-hari-ini>&nbsp;</p></div></div>
+      <div class="h__apung h__apung--bawah"><p class="fk__l">Layanan</p><ul class="cip"><li>Konsultasi dan pemeriksaan</li><li>Tindakan dan perawatan</li><li>Penjadwalan melalui WhatsApp</li><li>Informasi dan edukasi</li></ul></div>
     </div>
   </div>
 </section>
@@ -78,7 +73,7 @@
   </div>
 </section>
 
-<section class="vila galeri" id="galeri" aria-labelledby="gal-h"><div class="vila__sticky" id="galeriSticky"><header class="vila__head container"><h2 id="gal-h">Sekilas tentang Apotik Gading Bersama.</h2><p>Suasana dan dokumentasi dari Apotik Gading Bersama.</p></header><div class="vila__viewport" id="galeriView"><div class="vila__track" id="galeriTrack"><figure class="kartu"><div class="frame"><img src="img/f1.webp" width="316" height="611" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f2.webp" width="787" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f3.webp" width="787" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f4.webp" width="787" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f5.webp" width="1400" height="947" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f6.webp" width="787" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f7.webp" width="1050" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f8.webp" width="720" height="1280" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure></div></div><div class="vila__bar" aria-hidden="true"><i id="galeriBar"></i></div></div></section>
+<section class="vila galeri" id="galeri" aria-labelledby="gal-h"><div class="vila__sticky" id="galeriSticky"><header class="vila__head container"><h2 id="gal-h">Sekilas tentang Apotik Gading Bersama.</h2><p>Suasana dan dokumentasi dari Apotik Gading Bersama.</p></header><div class="vila__viewport" id="galeriView"><div class="vila__track" id="galeriTrack"><figure class="kartu"><div class="frame"><img src="img/f1.webp" width="316" height="611" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f2.webp" width="787" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f3.webp" width="787" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f4.webp" width="787" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f5.webp" width="1400" height="947" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f6.webp" width="787" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f7.webp" width="1050" height="1400" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure><figure class="kartu"><div class="frame"><img src="img/f8.webp" width="1400" height="1050" loading="lazy" alt="Foto Apotik Gading Bersama"></div></figure></div></div><div class="vila__bar" aria-hidden="true"><i id="galeriBar"></i></div></div></section>
 
 
 <section class="lokasi" id="lokasi" aria-labelledby="lok-h">
@@ -128,7 +123,7 @@
 
 <div class="bar" id="bar"><a class="btn btn--ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=-6.2430615,106.6249445" target="_blank" rel="noopener">Petunjuk arah</a><a class="btn btn--solid" href="https://wa.me/628118905829?text=Selamat%20siang%2C%20saya%20ingin%20membuat%20janji%20kunjungan%20di%20Apotik%20Gading%20Bersama." target="_blank" rel="noopener">WhatsApp</a></div>
 
-<script>window.SITE={"wa": "628118905829", "nama": "Apotik Gading Bersama"};</script>
+<script>window.SITE={"wa": "628118905829", "nama": "Apotik Gading Bersama", "jam": {"Senin": "06.30–22.30", "Selasa": "06.30–22.30", "Rabu": "06.30–22.30", "Kamis": "06.30–22.30", "Jumat": "06.30–22.30", "Sabtu": "06.30–22.30", "Minggu": "06.30–22.30"}};</script>
 <script src="../../aset-mewah/vendor/gsap.min.js"></script>
 <script src="../../aset-mewah/vendor/ScrollTrigger.min.js"></script>
 <script src="../../aset-mewah/vendor/SplitText.min.js"></script>

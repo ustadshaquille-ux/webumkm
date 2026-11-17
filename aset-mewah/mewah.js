@@ -68,10 +68,14 @@
           return gsap.from(self.lines, { yPercent: 118, duration: 1.5, ease: "expo.out", stagger: 0.11, delay: 0.25 });
         },
       });
-      gsap.fromTo(".hero__id, .hero__sub, .hero__cta", { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 1.2, ease: "power3.out", stagger: 0.1, delay: 0.95 });
-      gsap.from(".hero__media", { scale: 1.16, duration: 2.8, ease: "expo.out" });
-      gsap.from(".hero__shade", { opacity: 0, duration: 1.8, ease: "power2.out" });
-      gsap.from(".hero__hint", { opacity: 0, duration: 1.4, delay: 1.5 });
+      const masuk = $$("[data-masuk]");   // model bagian atas (hero_model.py): tiap blok naik perlahan, berurutan
+      if (masuk.length) gsap.fromTo(masuk, { autoAlpha: 0, y: 26 }, { autoAlpha: 1, y: 0, duration: 1.25, ease: "power3.out", stagger: 0.09, delay: 0.55 });
+      if ($(".hero__media")) {
+        gsap.fromTo(".hero__id, .hero__sub, .hero__cta", { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: 1.2, ease: "power3.out", stagger: 0.1, delay: 0.95 });
+        gsap.from(".hero__media", { scale: 1.16, duration: 2.8, ease: "expo.out" });
+        gsap.from(".hero__shade", { opacity: 0, duration: 1.8, ease: "power2.out" });
+        gsap.from(".hero__hint", { opacity: 0, duration: 1.4, delay: 1.5 });
+      }
       nav.style.transition = "none";
       gsap.from(nav, { yPercent: -100, opacity: 0, duration: 1.3, ease: "expo.out", delay: 0.5, clearProps: "transform,opacity", onComplete: () => { nav.style.transition = ""; } });
       if (window.Ripple) {
@@ -79,7 +83,17 @@
         gsap.delayedCall(1.7, () => Ripple.drop(0.7, 0.9, 0.85));
       }
     });
-    gsap.to("#heroMedia", { yPercent: 10, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
+    if ($("#heroMedia")) gsap.to("#heroMedia", { yPercent: 10, ease: "none", scrollTrigger: { trigger: hero, start: "top top", end: "bottom top", scrub: true } });
+  }
+
+  /* Jam buka hari ini di kartu fakta bagian atas (data asli dari Google Maps, lewat window.SITE.jam) */
+  {
+    const hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"][new Date().getDay()];
+    const jamHari = (SITE.jam || {})[hari];
+    $$("[data-jam-hari-ini]").forEach(el => {
+      if (jamHari) el.textContent = jamHari;
+      else { const k = el.closest(".b") || el.closest(".fk"); if (k) k.remove(); }
+    });
   }
 
   /* Pernyataan: kata menyala saat gulir */
