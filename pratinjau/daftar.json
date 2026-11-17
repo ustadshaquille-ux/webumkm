@@ -1,0 +1,90 @@
+[
+ {
+  "id": 202,
+  "nama": "Bebek Carok",
+  "cluster": "RESTORAN",
+  "model": "belah",
+  "folder": "belah-202",
+  "kelompok": "model"
+ },
+ {
+  "id": 120,
+  "nama": "Klinik GUNA ARDI MEDIKA Gading Serpong",
+  "cluster": "KLINIK",
+  "model": "melayang",
+  "folder": "melayang-120",
+  "kelompok": "model"
+ },
+ {
+  "id": 66,
+  "nama": "Palugadadotcom",
+  "cluster": "WEDDING_EVENT",
+  "model": "editorial",
+  "folder": "editorial-66",
+  "kelompok": "model"
+ },
+ {
+  "id": 122,
+  "nama": "Samira Travel PT SAMIRA ALIWISATA",
+  "cluster": "TRAVEL",
+  "model": "kapsul",
+  "folder": "kapsul-122",
+  "kelompok": "model"
+ },
+ {
+  "id": 88,
+  "nama": "Dokter Mobil Alam Sutera",
+  "cluster": "OTOMOTIF",
+  "model": "bento",
+  "folder": "bento-88",
+  "kelompok": "model"
+ },
+ {
+  "id": 65,
+  "nama": "Canabeans Alam Sutera",
+  "cluster": "CAFE",
+  "model": "panggung",
+  "folder": "panggung-65",
+  "kelompok": "model"
+ },
+ {
+  "id": 141,
+  "nama": "PT. Sinergi Bangun Arutala",
+  "cluster": "KONTRAKTOR",
+  "model": "bento",
+  "folder": "pt-141",
+  "kelompok": "perusahaan"
+ },
+ {
+  "id": 966,
+  "nama": "PT. Mahadibya Nurcahyo Chakrasana",
+  "cluster": "JASA_PROFESIONAL",
+  "model": "bento",
+  "folder": "pt-966",
+  "kelompok": "perusahaan"
+ },
+ {
+  "id": 852,
+  "nama": "PT Sopo Lind Real Estat",
+  "cluster": "PROPERTY",
+  "model": "kapsul",
+  "folder": "pt-852",
+  "kelompok": "perusahaan"
+ },
+ {
+  "id": 292,
+  "nama": "CV. Sumber Kreatif",
+  "cluster": "JASA",
+  "model": "melayang",
+  "folder": "pt-292",
+  "kelompok": "perusahaan"
+ },
+ {
+  "id": 408,
+  "nama": "PT anak Indonesia transindo",
+  "cluster": "TRAVEL",
+  "model": "belah",
+  "folder": "pt-408",
+  "kelompok": "perusahaan"
+ }
+]
