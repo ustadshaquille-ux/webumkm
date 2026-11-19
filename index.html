@@ -7,15 +7,16 @@
     <meta name="color-scheme" content="light" />
 
     <!-- ══ SEO DASAR — edit di sini ══════════════════════════════ -->
-    <title>Baqil — Bagas &amp; Shaquille | Websites and Apps for Business</title>
+    <title>Baqil · Website Developer for Small Business (UMKM) in Tangerang &amp; Jakarta</title>
     <meta
       name="description"
-      content="Baqil is Bagas and Shaquille, two IT students who build business websites, apps and interactive 3D experiences. See the work and try it yourself."
+      content="Baqil (Bagas &amp; Shaquille) builds websites, apps and 3D experiences for small businesses in Tangerang, Jakarta and across Indonesia. Jasa pembuatan website UMKM: see live client work and try it yourself."
     />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
     <meta name="author" content="Bagas &amp; Shaquille" />
     <meta
       name="keywords"
-      content="web developer, website developer, full-stack developer, web application, three.js, next.js, Tangerang, Jakarta, Indonesia"
+      content="Baqil, webumkm, jasa pembuatan website, website UMKM, jasa website Tangerang, web developer Tangerang, website developer Jakarta, company profile, landing page, Indonesia"
     />
     <link rel="canonical" href="https://webumkm.my.id/" />
 
@@ -53,12 +54,40 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Baqil",
-        "alternateName": "Bagas & Shaquille",
-        "address": { "@type": "PostalAddress", "addressLocality": "Tangerang", "addressCountry": "ID" },
-        "email": "baqilshop@gmail.com",
-        "knowsAbout": ["Web Development", "React", "Next.js", "Three.js", "Python", "Data Engineering"]
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://webumkm.my.id/#baqil",
+            "name": "Baqil",
+            "alternateName": ["Bagas & Shaquille", "Baqil Web Studio", "webumkm"],
+            "description": "Website, app and 3D experience developer for small businesses (UMKM) in Tangerang, Jakarta and across Indonesia.",
+            "url": "https://webumkm.my.id/",
+            "image": "https://webumkm.my.id/og.jpg",
+            "logo": "https://webumkm.my.id/favicon.svg",
+            "email": "baqilshop@gmail.com",
+            "address": { "@type": "PostalAddress", "addressLocality": "Tangerang", "addressRegion": "Banten", "addressCountry": "ID" },
+            "areaServed": ["Tangerang", "Tangerang Selatan", "Jakarta", "Indonesia"],
+            "founder": [{ "@type": "Person", "name": "Bagas" }, { "@type": "Person", "name": "Shaquille" }],
+            "knowsAbout": ["Website Development", "Company Profile Website", "Landing Page", "Web Application", "React", "Next.js", "Three.js"],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Website services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business website / company profile" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Landing page" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web application with admin panel" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Interactive 3D showroom" } }
+              ]
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://webumkm.my.id/#web",
+            "name": "Baqil",
+            "url": "https://webumkm.my.id/",
+            "publisher": { "@id": "https://webumkm.my.id/#baqil" }
+          }
+        ]
       }
     </script>
 

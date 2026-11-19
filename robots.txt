@@ -7,4 +7,10 @@ Allow: /assets/
 Allow: /projects/
 Allow: /favicon.svg
 Allow: /handshake
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /og.jpg
+Allow: /google57e1949bbe64548b.html
 Disallow: /
+
+Sitemap: https://webumkm.my.id/sitemap.xml
