@@ -1,0 +1,5 @@
+# Disiapkan untuk domain sendiri. Di webumkm.my.id yang berlaku robots.txt di akar situs.
+User-agent: *
+Allow: /
+
+Sitemap: https://webumkm.my.id/b2b-produsen/jasa-laser-cutting-1208/sitemap.xml
