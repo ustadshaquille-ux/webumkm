@@ -7,6 +7,20 @@
   const root = document.documentElement;
   const CONFIG = { wa: document.body.dataset.wa || "", nama: document.body.dataset.nama || "" };
   const reduce = root.classList.contains("reduce");
+  // Di laptop/PC, wa.me berhenti di halaman perantara ("Open app") yang buntu tanpa aplikasi WhatsApp Desktop.
+  // Jadi di perangkat non-HP semua tautan WhatsApp langsung diarahkan ke WhatsApp Web.
+  const ua = navigator.userAgent;
+  const hp = /Android|iPhone|iPad|iPod|Mobile/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/i.test(ua));
+  const keWa = (u) => {
+    if (hp) return u;
+    try {
+      const x = new URL(u);
+      if (x.hostname !== "wa.me") return u;
+      const t = x.searchParams.get("text");
+      return `https://web.whatsapp.com/send?phone=${x.pathname.replace(/\D/g, "")}${t ? `&text=${encodeURIComponent(t)}` : ""}`;
+    } catch { return u; }
+  };
+  $$('a[href^="https://wa.me/"]').forEach((el) => { el.href = keWa(el.href); });
   const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
   const desktop = () => matchMedia("(min-width: 900px)").matches;
   const reveal = () => $$(".anim-hide").forEach(el => (el.style.visibility = "visible"));
@@ -184,7 +198,7 @@
       if (c) baris.push(`Catatan: ${c}`);
       baris.push("", f === "Belum ada file" ? "Sketsa atau foto contoh akan saya kirimkan melalui chat ini. Terima kasih." : "File desain akan saya kirimkan melalui chat ini. Terima kasih.");
       galat.textContent = "";
-      window.open(`https://wa.me/${CONFIG.wa}?text=${encodeURIComponent(baris.join("\n"))}`, "_blank", "noopener");
+      window.open(keWa(`https://wa.me/${CONFIG.wa}?text=${encodeURIComponent(baris.join("\n"))}`), "_blank", "noopener");
       rKet.textContent = "WhatsApp terbuka di tab baru. Lampirkan file desain Anda di sana.";
     });
     ringkas();
