@@ -117,7 +117,7 @@ p { max-width: 64ch; }
 .hero .btn--solid::before { background: var(--acc-d); }
 
 /* jalur potong laser di hero */
-.potong { position: absolute; right: var(--gutter); top: calc(var(--nav-h) + clamp(18px, 6vh, 70px)); width: clamp(240px, 30vw, 470px); pointer-events: none; color: #fff; }
+.potong { position: absolute; right: var(--gutter); top: calc(var(--nav-h) + clamp(12px, 4.5vh, 64px)); width: clamp(200px, min(30vw, 38vh), 470px); pointer-events: none; color: #fff; }
 .potong svg { width: 100%; height: auto; overflow: visible; }
 .potong .jalur { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
 .potong .benda { fill: rgba(255, 255, 255, 0); transition: fill 1.2s var(--ease), transform 1.4s var(--ease); }
@@ -213,11 +213,14 @@ p { max-width: 64ch; }
 .tebal__n { font-weight: 500; }
 .tebal__n a { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
 .tebal__n a:hover { text-decoration-color: currentColor; }
-.tebal__bar { position: relative; height: 12px; background: repeating-linear-gradient(to right, var(--line) 0 1px, transparent 1px calc(100% / 20)); }
+.tebal__bar { position: relative; height: 12px; background: linear-gradient(var(--line), var(--line)) right / 1px 100% no-repeat, repeating-linear-gradient(to right, var(--line) 0 1px, transparent 1px calc(100% / 20)); }
 .tebal__bar i { position: absolute; top: 2px; bottom: 2px; left: calc(var(--a) / 20 * 100%); width: calc((var(--b) - var(--a)) / 20 * 100%); background: var(--fg); transform-origin: left; }
 .tebal__v { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--f-display); font-stretch: var(--lebar); font-weight: 540; letter-spacing: -.01em; white-space: nowrap; }
 .tebal__skala { display: grid; grid-template-columns: minmax(150px, 15rem) 1fr minmax(110px, 9rem); gap: 12px 28px; padding-top: 10px; font-size: .82rem; color: var(--fg-2); }
-.tebal__skala div { display: flex; justify-content: space-between; font-variant-numeric: tabular-nums; }
+.tebal__skala div { position: relative; height: 1.4em; font-variant-numeric: tabular-nums; }
+.tebal__skala div span { position: absolute; top: 0; left: var(--x); transform: translateX(-50%); white-space: nowrap; }
+.tebal__skala div span:first-child { transform: none; }
+.tebal__skala div span:last-child { transform: translateX(-100%); }
 .catatan { margin-top: 22px; font-size: .92rem; color: var(--fg-2); max-width: 70ch; }
 
 /* ---------- Langkah order ---------- */
@@ -282,7 +285,7 @@ p { max-width: 64ch; }
 .galeri figcaption { margin-top: 10px; font-size: .92rem; color: var(--fg-2); }
 
 /* ---------- Tentang ---------- */
-.prinsip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 clamp(18px, 2.4vw, 36px); }
+.prinsip { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(30px, 3.4vw, 48px) clamp(18px, 2.4vw, 36px); }
 .prinsip li { border-top: 1px solid var(--line); padding-top: 22px; }
 .prinsip p { margin-top: 10px; color: var(--fg-2); }
 .lebar-foto .frame { aspect-ratio: 21 / 9; }
